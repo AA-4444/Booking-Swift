@@ -1,0 +1,4 @@
+module GTMSessionFetcherFull {
+umbrella "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/gtm-session-fetcher/Sources/Full/Public"
+export *
+}

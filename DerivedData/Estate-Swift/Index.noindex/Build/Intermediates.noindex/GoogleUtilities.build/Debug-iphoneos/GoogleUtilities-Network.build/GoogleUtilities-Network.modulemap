@@ -1,0 +1,4 @@
+module GoogleUtilities_Network {
+umbrella "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GoogleUtilities/GoogleUtilities/Network/Public"
+export *
+}

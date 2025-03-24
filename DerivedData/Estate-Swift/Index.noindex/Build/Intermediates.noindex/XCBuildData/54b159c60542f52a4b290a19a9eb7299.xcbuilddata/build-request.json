@@ -1,0 +1,194 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "PACKAGE-PRODUCT:AppCheckCore"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:AppAuthTV"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:AppAuth"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:AppAuthCore"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:AppAuthTV"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:AppAuthTV"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:GTMSessionFetcherFull"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:GTMSessionFetcherLogView"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GTMSessionFetcher"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GTMSessionFetcherCore"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GTMSessionFetcherFull"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GTMSessionFetcherLogView"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:GTMSessionFetcherFull"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:GTMSessionFetcherLogView"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GoogleSignIn"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GoogleSignInSwift"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GTMAppAuth"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:FBLPromisesTestHelpers"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:Promises"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:PromisesTestHelpers"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:FBLPromises"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:FBLPromisesTestHelpers"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:Promises"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:PromisesTestHelpers"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:Promises"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:GoogleUtilities-AppDelegateSwizzler"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:GoogleUtilities-MethodSwizzler"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:GoogleUtilities-NSData"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:GoogleUtilities-Network"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:GoogleUtilities-Reachability"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:GoogleUtilities-SwizzlerTestHelpers"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULAppDelegateSwizzler"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULEnvironment"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULLogger"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULMethodSwizzler"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULNSData"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULNetwork"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULReachability"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULSwizzlerTestHelpers"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:GULUserDefaults"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:GoogleUtilities-AppDelegateSwizzler"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:GoogleUtilities-MethodSwizzler"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:GoogleUtilities-NSData"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:GoogleUtilities-Network"
+    },
+    {
+      "guid" : "PACKAGE-RESOURCE:GoogleUtilities-Reachability"
+    }
+  ],
+  "containerPath" : "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphoneos",
+      "sdk" : "iphoneos18.2",
+      "sdkVariant" : "iphoneos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64v8",
+        "arm64",
+        "armv8"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Build/Products",
+      "pchPath" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

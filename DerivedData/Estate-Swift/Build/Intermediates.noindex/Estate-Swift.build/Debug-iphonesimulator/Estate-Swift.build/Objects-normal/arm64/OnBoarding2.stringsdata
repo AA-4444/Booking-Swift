@@ -1,0 +1,40 @@
+{
+  "source": "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/OnBoarding-Screens/OnBoarding2.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Skip",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fast sell your property\n",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "in just one click",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 83
+        }
+      },
+      {
+        "comment": "",
+        "key": "Next",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 102
+        }
+      }
+    ]
+  },
+  "version": 1
+}

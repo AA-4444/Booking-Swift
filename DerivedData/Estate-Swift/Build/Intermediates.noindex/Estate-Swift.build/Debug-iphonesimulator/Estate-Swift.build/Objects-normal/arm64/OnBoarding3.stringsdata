@@ -1,0 +1,40 @@
+{
+  "source": "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/OnBoarding-Screens/OnBoarding3.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Skip",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "Find your perfect choice\n",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "of your future house",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "Next",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 86
+        }
+      }
+    ]
+  },
+  "version": 1
+}

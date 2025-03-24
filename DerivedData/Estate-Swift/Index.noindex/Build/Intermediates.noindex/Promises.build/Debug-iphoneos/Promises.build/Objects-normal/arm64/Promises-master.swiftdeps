@@ -1,0 +1,45 @@
+version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
+options: "a0872e865eb66dab9b7fe6a74264961ccf3ea95fa79395b488258d495041a84c"
+build_start_time: [1742758050, 435773000]
+build_end_time: [1742758050, 920109000]
+inputs:
+  ? "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/Promises.build/Debug-iphoneos/Promises.build/DerivedSources/resource_bundle_accessor.swift"
+  : [1742758049, 887315237]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+All.swift"
+  : [1742757949, 735539633]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Always.swift"
+  : [1742757949, 735618547]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Any.swift"
+  : [1742757949, 735843250]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Async.swift"
+  : [1742757949, 735924414]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Await.swift"
+  : [1742757949, 736007204]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Catch.swift"
+  : [1742757949, 736097118]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Delay.swift"
+  : [1742757949, 736181199]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Do.swift"
+  : [1742757949, 736255822]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Race.swift"
+  : [1742757949, 736331611]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Recover.swift"
+  : [1742757949, 736404068]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Reduce.swift"
+  : [1742757949, 736473899]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Retry.swift"
+  : [1742757949, 736548939]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Testing.swift"
+  : [1742757949, 736630603]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Then.swift"
+  : [1742757949, 736704102]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Timeout.swift"
+  : [1742757949, 736770683]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Validate.swift"
+  : [1742757949, 736841931]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise+Wrap.swift"
+  : [1742757949, 736931970]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/Promise.swift"
+  : [1742757949, 737153089]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/Promises/PromiseError.swift"
+  : [1742757949, 737239295]

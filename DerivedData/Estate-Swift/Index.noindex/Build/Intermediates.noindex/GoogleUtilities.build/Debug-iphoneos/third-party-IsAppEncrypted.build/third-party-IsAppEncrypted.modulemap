@@ -1,0 +1,4 @@
+module third_party_IsAppEncrypted {
+umbrella "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GoogleUtilities/third_party/IsAppEncrypted/Public"
+export *
+}

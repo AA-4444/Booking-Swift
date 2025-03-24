@@ -1,0 +1,14 @@
+version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
+options: "a7e4d271e9d0e4fa93417f561b2ffb1aa5f5ccd271dd10ac58b018593e987d46"
+build_start_time: [1742758047, 441276000]
+build_end_time: [1742758047, 967612000]
+inputs:
+  ? "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/Estate-Swift.build/Debug-iphoneos/Estate-Swift.build/DerivedSources/GeneratedAssetSymbols.swift"
+  : [1742758035, 249259551]
+  "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/ContentView.swift": [1742754945, 179579461]
+  "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/Estate_SwiftApp.swift": [1742756837, 343384776]
+  "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/OnBoarding-Screens/Login:Option.swift": [1742755834, 213154393]
+  "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/OnBoarding-Screens/OnBoarding1.swift": [1742472960, 217170855]
+  "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/OnBoarding-Screens/OnBoarding2.swift": [1742430064, 870901569]
+  "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/OnBoarding-Screens/OnBoarding3.swift": [1742479690, 825903042]
+  "/Users/alexzarytsky/Documents/Estate-Swift/Estate-Swift/OnBoarding-Screens/start.swift": [1742478417, 15268400]

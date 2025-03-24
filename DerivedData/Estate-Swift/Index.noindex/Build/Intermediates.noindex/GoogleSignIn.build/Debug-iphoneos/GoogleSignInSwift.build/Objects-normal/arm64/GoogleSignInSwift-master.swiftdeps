@@ -1,0 +1,17 @@
+version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
+options: "4cff86734debfe0fba0487c4b6a2d75d416ed8855408d0b42f001dad0f952a11"
+build_start_time: [1742758047, 431361000]
+build_end_time: [1742758047, 969372000]
+inputs:
+  ? "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/GoogleSignIn.build/Debug-iphoneos/GoogleSignInSwift.build/DerivedSources/resource_bundle_accessor.swift"
+  : !dirty [1742758028, 320792086]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignInSwift/Sources/GoogleSignInButton.swift"
+  : !dirty [1742757950, 372846906]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignInSwift/Sources/GoogleSignInButtonBundleExtensions.swift"
+  : !dirty [1742757950, 372934487]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignInSwift/Sources/GoogleSignInButtonStrings.swift"
+  : !dirty [1742757950, 373016402]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignInSwift/Sources/GoogleSignInButtonStyling.swift"
+  : !dirty [1742757950, 373117774]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignInSwift/Sources/GoogleSignInButtonViewModel.swift"
+  : !dirty [1742757950, 373205397]

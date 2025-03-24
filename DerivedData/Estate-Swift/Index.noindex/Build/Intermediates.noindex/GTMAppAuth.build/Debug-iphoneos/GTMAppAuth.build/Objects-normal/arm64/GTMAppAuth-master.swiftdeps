@@ -1,0 +1,21 @@
+version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
+options: "4abeeb5029f2f1641bd2bd61674810df4f5def371557af7b569e0357343c8f44"
+build_start_time: [1742758047, 441631000]
+build_end_time: [1742758047, 968955000]
+inputs:
+  ? "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/GTMAppAuth.build/Debug-iphoneos/GTMAppAuth.build/DerivedSources/resource_bundle_accessor.swift"
+  : !dirty [1742758028, 347362728]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GTMAppAuth/GTMAppAuth/Sources/AuthSession.swift"
+  : !dirty [1742757949, 494678013]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GTMAppAuth/GTMAppAuth/Sources/AuthSessionDelegate.swift"
+  : !dirty [1742757949, 494762594]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GTMAppAuth/GTMAppAuth/Sources/AuthSessionStore.swift"
+  : !dirty [1742757949, 494884507]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GTMAppAuth/GTMAppAuth/Sources/KeychainStore/GTMOAuth2Compatibility.swift"
+  : !dirty [1742757949, 495038211]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GTMAppAuth/GTMAppAuth/Sources/KeychainStore/KeychainAttribute.swift"
+  : !dirty [1742757949, 495111085]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GTMAppAuth/GTMAppAuth/Sources/KeychainStore/KeychainHelper.swift"
+  : !dirty [1742757949, 495193332]
+  ? "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/GTMAppAuth/GTMAppAuth/Sources/KeychainStore/KeychainStore.swift"
+  : !dirty [1742757949, 495437284]

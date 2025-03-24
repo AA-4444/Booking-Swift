@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/GACAppAttestProvider.m \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Public/AppCheckCore/GACAppAttestProvider.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/TargetConditionals.modulemap \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Public/AppCheckCore/GACAppCheckProvider.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Public/AppCheckCore/GACAppCheckAvailability.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/DCAppAttestService+GACAppAttestService.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/DeviceCheck.framework/Modules/module.modulemap \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/GACAppAttestService.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/promises/Sources/FBLPromises/include/module.modulemap \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/API/GACAppAttestAPIService.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/API/GACAppAttestAttestationResponse.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/GACAppAttestProviderState.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/Storage/GACAppAttestArtifactStorage.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/Storage/GACAppAttestKeyIDStorage.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Core/APIService/GACAppCheckAPIService.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Core/Backoff/GACAppCheckBackoffWrapper.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Core/GACAppCheckLogger+Internal.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Public/AppCheckCore/GACAppCheckErrors.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Public/AppCheckCore/GACAppCheckLogger.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Public/AppCheckCore/GACAppCheckToken.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Core/Utils/GACAppCheckCryptoUtils.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/AppAttestProvider/Errors/GACAppAttestRejectionError.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Core/Errors/GACAppCheckErrorUtil.h \
+  /Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/app-check/AppCheckCore/Sources/Core/Errors/GACAppCheckHTTPError.h

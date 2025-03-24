@@ -1,0 +1,12 @@
+{
+  "" : {
+    "dependencies" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/Estate-Swift.build/Debug-maccatalyst/Estate-SwiftTests.build/Objects-normal/arm64/Estate-SwiftTests-master.d",
+    "diagnostics" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/Estate-Swift.build/Debug-maccatalyst/Estate-SwiftTests.build/Objects-normal/arm64/Estate-SwiftTests-master.dia",
+    "emit-module-dependencies" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/Estate-Swift.build/Debug-maccatalyst/Estate-SwiftTests.build/Objects-normal/arm64/Estate-SwiftTests-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/Estate-Swift.build/Debug-maccatalyst/Estate-SwiftTests.build/Objects-normal/arm64/Estate-SwiftTests-master-emit-module.dia",
+    "swift-dependencies" : "/Users/alexzarytsky/Documents/Estate-Swift/DerivedData/Estate-Swift/Index.noindex/Build/Intermediates.noindex/Estate-Swift.build/Debug-maccatalyst/Estate-SwiftTests.build/Objects-normal/arm64/Estate-SwiftTests-master.swiftdeps"
+  },
+  "/Users/alexzarytsky/Documents/Estate-Swift/Estate-SwiftTests/Estate_SwiftTests.swift" : {
+
+  }
+}
