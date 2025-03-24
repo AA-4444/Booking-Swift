@@ -5,8 +5,14 @@
 //  Created by Алексей Зарицький on 3/23/25.
 //
 
-import GoogleSignIn
 import SwiftUI
+import GoogleSignIn
+import FirebaseAuth
+import FacebookLogin
+import FBSDKLoginKit
+import FBSDKCoreKit
+
+
 
 struct Login: View {
     @Binding var user:  User?
@@ -115,9 +121,9 @@ struct Login: View {
                         .cornerRadius(15)
                         
                         
-                        //MARK: Facebook...
+                        //MARK: Facebook button...
                         Button(action: {
-                            
+                            loginWithFacebook()
                         }) {
                             Image("facebook")
                                 .resizable()
@@ -173,7 +179,7 @@ struct Login: View {
     
     
     
-    
+    //MARK: Google login Function
     func handleSignupButton() {
         print("Login with Google")
         
@@ -189,9 +195,60 @@ struct Login: View {
             }
         }
         
+        
+        
        
     }
+    
+    //MARK:  Facebook Login Function
+    func loginWithFacebook() {
+        let loginManager = LoginManager()
+        
+        // Requesting permissions to access user data
+        loginManager.logIn(permissions: ["public_profile", "email"], from: nil) { result, error in
+            if let error = error {
+                print("Error during Facebook login: \(error.localizedDescription)")
+                return
+            }
+            
+            // Check if the login was cancelled
+            guard let result = result, !result.isCancelled else {
+                print("Facebook login was cancelled")
+                return
+            }
+            
+            // Facebook login successful, process the user info
+            if let accessToken = AccessToken.current {
+                // Now you have the access token, you can get the user's info
+                print("Facebook user logged in: \(accessToken.userID)")
+                
+                // Fetch the user's profile info (e.g., name, email)
+                let request = GraphRequest(graphPath: "me", parameters: ["fields": "id,name,email"])
+                request.start { connection, result, error in
+                    if let error = error {
+                        print("Error fetching Facebook user details: \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    // Handle the returned user data
+                    if let userDetails = result as? [String: Any] {
+                        let userName = userDetails["name"] as? String ?? "Unknown User"
+                        let userEmail = userDetails["email"] as? String ?? "No Email"
+                        
+                        // Now you can use the user details in your app
+                        print("User name: \(userName), Email: \(userEmail)")
+                        
+                        // Optionally, set the user object
+                        self.user = User(name: userName)
+                    }
+                }
+            }
+        }
+    }
+
+
 }
+//for test
 #Preview {
     Login(user: .constant(nil))
 }
