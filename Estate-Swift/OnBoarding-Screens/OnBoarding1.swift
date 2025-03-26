@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-
-
-
 struct OnBoarding1View: View {
-    
+    @Binding var path: NavigationPath
     var isSmallDevice: Bool {
            UIScreen.main.bounds.height < 700 // Adjust this threshold for small devices
        }
@@ -66,7 +63,7 @@ struct OnBoarding1View: View {
                     .ignoresSafeArea(.all)
                 
                 Button {
-                    
+                    path.append(AppRoute.onboarding2)
                 } label: {
                     Text("Next")
                         .font(.custom("Lato-Regular", size: 20))
@@ -85,9 +82,10 @@ struct OnBoarding1View: View {
                 ))
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    OnBoarding1View()
+    OnBoarding1View(path: .constant(NavigationPath()))
 }

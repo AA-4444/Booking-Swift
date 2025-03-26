@@ -44,23 +44,43 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 
 
+
 @main
 struct Estate_SwiftApp: App {
     @State var user: User?
+    @State private var path = NavigationPath()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(user: self.$user)
-                .onOpenURL { url in
-                    GIDSignIn.sharedInstance.handle(url)
-                }
-                .onAppear {
-                    GIDSignIn.sharedInstance.restorePreviousSignIn {user, error in
-                        if let user {
-                            self.user = .init(name: user.profile?.name ?? "")
+            NavigationStack(path: $path) {
+                StartView(path: $path) // Set That user start from Start screen :)
+                    .onAppear {
+                        //-- Restore user session if available
+                        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+                            if let user {
+                                self.user = User(name: user.profile?.name ?? "")
+                                // path.append(AppRoute.home) // If logged in, go to home
+                            }
                         }
                     }
-                }
+                    .navigationDestination(for: AppRoute.self) { route in
+                        switch route {
+                        case .start:
+                            StartView(path: $path)
+                        case .onboarding1:
+                            OnBoarding1View(path: $path)
+                        case .onboarding2:
+                            OnBoarding2(path: $path)
+                        case .onboarding3:
+                            OnBoarding3(path: $path)
+                        case .login:
+                            Login(user: $user)
+                            // case .home:
+                            //     HomeView(user: $user)
+                        }
+                    }
+            }
         }
     }
 }

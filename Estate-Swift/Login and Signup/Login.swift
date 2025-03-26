@@ -150,6 +150,7 @@ struct Login: View {
                     .padding(.bottom,15)
                 
             }
+            .navigationBarBackButtonHidden(true)
         }
     
    

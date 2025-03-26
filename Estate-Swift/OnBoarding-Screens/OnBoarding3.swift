@@ -11,7 +11,7 @@ struct OnBoarding3: View {
     var isSmallDevice: Bool {
            UIScreen.main.bounds.height < 700
     }
-    
+    @Binding var path: NavigationPath
     var body: some View {
         VStack {
             HStack() {
@@ -60,7 +60,7 @@ struct OnBoarding3: View {
                 
                 HStack {
                     Button {
-                       
+                        path.removeLast()
                     } label: {
                         Image(systemName: "arrow.backward")
                             .symbolRenderingMode(.monochrome)
@@ -81,7 +81,7 @@ struct OnBoarding3: View {
                     ))
 
                     Button {
-                        
+                        path.append(AppRoute.login)
                     } label: {
                         Text("Next")
                             .font(.custom("Lato-Regular", size: 20))
@@ -105,9 +105,10 @@ struct OnBoarding3: View {
             }
             
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    OnBoarding3()
+    OnBoarding3(path: .constant(NavigationPath()))
 }

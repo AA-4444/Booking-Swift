@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
+    @Binding var path: NavigationPath
     var body: some View {
         ZStack {
             
@@ -46,7 +47,7 @@ struct StartView: View {
                 
                 VStack {
                     Button {
-                        
+                        path.append(AppRoute.onboarding1)
                     } label: {
                         Text("Let's Start")
                             .foregroundColor(.white)
@@ -82,5 +83,5 @@ struct StartView: View {
 }
 
 #Preview {
-    StartView()
+    StartView(path: .constant(NavigationPath()))
 }

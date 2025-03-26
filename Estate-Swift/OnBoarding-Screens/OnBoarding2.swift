@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DeviceHelper {
+   
     static let screenHeight = UIScreen.main.bounds.height
     
     static var isSmallScreen: Bool {
@@ -48,7 +49,7 @@ struct OnBoarding2: View {
     var isSmallDevice: Bool {
            UIScreen.main.bounds.height < 700 // Adjust this threshold for small devices
        }
-    
+    @Binding var path: NavigationPath
     var body: some View {
         VStack {
             HStack() {
@@ -97,7 +98,7 @@ struct OnBoarding2: View {
                     .ignoresSafeArea(.all)
                 
                 Button {
-                    
+                    path.append(AppRoute.onboarding3)
                 } label: {
                     Text("Next")
                         .font(.custom("Lato-Regular", size: 20))
@@ -117,9 +118,10 @@ struct OnBoarding2: View {
             }
             
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    OnBoarding2()
+    OnBoarding2(path: .constant(NavigationPath()))
 }
