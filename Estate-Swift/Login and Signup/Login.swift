@@ -18,6 +18,8 @@ struct Login: View {
     @Binding var user:  User?
     
         let images = ["Image1", "Image2", "Image3", "Image4"]
+    
+   
         
         var body: some View {
             VStack(spacing:  DeviceHelper.adaptivePadding(

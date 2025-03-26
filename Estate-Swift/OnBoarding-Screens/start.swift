@@ -35,8 +35,8 @@ struct StartView: View {
                     
                 //    Spacer().frame(height: 10)
                     
-                    Text("EState")
-                        .font(.custom("Lato-Black", size: 50))
+                    Text("Vest EState")
+                        .font(.custom("Lato-Black", size: 46))
                         .foregroundColor(.white)
                         .padding(.top,-85)
                        
