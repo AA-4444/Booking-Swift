@@ -1,4 +1,0 @@
-module AppAuth {
-umbrella "/Users/alexzarytsky/Library/Developer/Xcode/DerivedData/Estate-Swift-gyikitxugfcqncgehxabwmzlpqvc/SourcePackages/checkouts/AppAuth-iOS/Sources/AppAuth"
-export *
-}
