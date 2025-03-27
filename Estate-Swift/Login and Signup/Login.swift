@@ -16,7 +16,7 @@ import FBSDKCoreKit
 
 struct Login: View {
     @Binding var user:  User?
-    
+    @Binding var path: NavigationPath
         let images = ["Image1", "Image2", "Image3", "Image4"]
     
    
@@ -58,6 +58,7 @@ struct Login: View {
                     //MARK: Email login...
                     Button {
                         //Email login
+                        path.append(AppRoute.loginemail)
                     } label: {
                         HStack {
                             Image(systemName: "envelope")
@@ -253,7 +254,7 @@ struct Login: View {
 }
 //for test
 #Preview {
-    Login(user: .constant(nil))
+    Login(user: .constant(nil), path: .constant(NavigationPath()))
 }
    
 

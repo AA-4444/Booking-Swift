@@ -20,7 +20,7 @@ struct ContentView: View {
                 Text("Log out")
             }
         } else {
-            Login(user: self.$user)
+            Login(user: self.$user ,path: .constant(NavigationPath()))
         }
     }
 }

@@ -75,7 +75,9 @@ struct Estate_SwiftApp: App {
                         case .onboarding3:
                             OnBoarding3(path: $path)
                         case .login:
-                            Login(user: $user)
+                                Login(user: $user,path: $path)
+                            case .loginemail:
+                                LoginEmail(user: $user)
                             // case .home:
                             //     HomeView(user: $user)
                         }
