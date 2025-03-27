@@ -255,7 +255,7 @@ struct LoginEmail: View {
         func loginWithFacebook() {
             let loginManager = LoginManager()
             
-            // Requesting permissions to access user data
+            // -- Requesting permissions to access user data
             loginManager.logIn(permissions: ["public_profile", "email"], from: nil) { result, error in
                 if let error = error {
                     print("Error during Facebook login: \(error.localizedDescription)")
@@ -268,12 +268,11 @@ struct LoginEmail: View {
                     return
                 }
                 
-                // Facebook login successful, process the user info
+                // Facebook login successful
                 if let accessToken = AccessToken.current {
-                    // Now you have the access token, you can get the user's info
+                   
                     print("Facebook user logged in: \(accessToken.userID)")
                     
-                    // Fetch the user's profile info (e.g., name, email)
                     let request = GraphRequest(graphPath: "me", parameters: ["fields": "id,name,email"])
                     request.start { connection, result, error in
                         if let error = error {
@@ -286,10 +285,10 @@ struct LoginEmail: View {
                             let userName = userDetails["name"] as? String ?? "Unknown User"
                             let userEmail = userDetails["email"] as? String ?? "No Email"
                             
-                            // Now you can use the user details in your app
+                            
                             print("User name: \(userName), Email: \(userEmail)")
                             
-                            // Optionally, set the user object
+                           
                             self.user = User(name: userName)
                         }
                     }
