@@ -24,23 +24,38 @@ struct LoginEmail: View {
                 VStack(){
                  Image("Image-0")
                         .resizable()
-                        .frame(maxWidth: .infinity, maxHeight: 175)
+                        .frame(maxWidth: .infinity, maxHeight: DeviceHelper.adaptivePadding(
+                            small: 170,
+                            medium: 210,
+                            pro: 210,
+                            proMax: 238
+                        ))
                         .edgesIgnoringSafeArea(.all)
                     
                     
-                    
-                    Text("Ready to explore ?")
-                        .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
-                            small: 27,
-                            medium: 30,
-                            pro: 30,
-                            proMax: 30
-                        )))
-                        .foregroundColor(.black)
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .padding(.horizontal)
-                       .padding(.bottom, 20)
-                       
+                    HStack {
+                        Text("Let’s")
+                            .font(.custom("Lato-Regular", size: DeviceHelper.adaptivePadding(
+                                small: 27,
+                                medium: 30,
+                                pro: 30,
+                                proMax: 30
+                            )))
+                            .foregroundColor(.black)
+                          
+                        Text("Sign In")
+                            .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
+                                small: 27,
+                                medium: 30,
+                                pro: 30,
+                                proMax: 30
+                            )))
+                            .foregroundColor(.black)
+                           
+                    }
+                    .frame(maxWidth: .infinity,alignment: .leading)
+                    .padding(.horizontal)
+                    .padding(.top, 20)
                    
                     VStack {
                         //Forms for Email/Pass
@@ -113,7 +128,12 @@ struct LoginEmail: View {
                             .padding(.top,5)
                         }
                         
-                        Spacer().frame(height: 140)
+                        Spacer().frame(height:  DeviceHelper.adaptivePadding(
+                            small: 18,
+                            medium: 140,
+                            pro: 140,
+                            proMax: 190
+                        ))
                         
                         VStack {
                             //Divider
@@ -190,12 +210,18 @@ struct LoginEmail: View {
                                     .font(.custom("Lato-Black", size: 15))
                             }
                             .padding(.top,15)
+                            .padding(.bottom, DeviceHelper.adaptivePadding(
+                                small: 22,
+                                medium: 0,
+                                pro: 0,
+                                proMax: 0
+                            ))
                         }
                       
                     }
                     
                 }
-                //.background(Color.black)
+          //  .background(Color.black)
                // .padding(.bottom,10)
                 .navigationBarBackButtonHidden(true)
             }

@@ -168,12 +168,12 @@ struct Login: View {
                     small: 158,
                     medium: 174,
                     pro: 174,
-                    proMax: 200
+                    proMax: 190
                 ) ,height:  DeviceHelper.adaptivePadding(
                     small: 158,
                     medium: 174,
                     pro: 174,
-                    proMax: 200
+                    proMax: 190
                 ))
                 .clipped()
                 .cornerRadius(10)
