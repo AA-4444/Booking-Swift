@@ -49,7 +49,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9A122B642D908CD700E4A2AC /* Exceptions for "Estate-Swift" folder in "Estate-Swift" target */ = {
+		9AB560022D95EF350063547D /* Exceptions for "Estate-Swift" folder in "Estate-Swift" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -62,7 +62,7 @@
 		9A122ACE2D908C0100E4A2AC /* Estate-Swift */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				9A122B642D908CD700E4A2AC /* Exceptions for "Estate-Swift" folder in "Estate-Swift" target */,
+				9AB560022D95EF350063547D /* Exceptions for "Estate-Swift" folder in "Estate-Swift" target */,
 			);
 			path = "Estate-Swift";
 			sourceTree = "<group>";
