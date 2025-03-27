@@ -9,28 +9,33 @@ import SwiftUI
 import FirebaseCore
 import FacebookCore
 import FBSDKCoreKit
+import Security
+
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
-  ) -> Bool {
-    // Firebase Initialization...
-    FirebaseApp.configure()
 
-    // Facebook Initialization...
-    ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+    var facebookAppID: String?
+       var facebookClientToken: String?
+       var googleClientID: String?
 
-    // Google Sign-In Initialization...
-    GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-      if let user = user {
-        print("Google user restored: \(user.profile?.name ?? "")")
-      }
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        facebookAppID = Bundle.main.object(forInfoDictionaryKey: "FacebookAppID") as? String
+        facebookClientToken = Bundle.main.object(forInfoDictionaryKey: "FacebookClientToken") as? String
+        googleClientID = Bundle.main.object(forInfoDictionaryKey: "GIDClientID") as? String
+
+        print("Loaded FacebookAppID: \(facebookAppID ?? "Not Found")")
+        print("Loaded FacebookClientToken: \(facebookClientToken ?? "Not Found")")
+        print("Loaded GIDClientID: \(googleClientID ?? "Not Found")")
+
+        FirebaseApp.configure()
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if let user = user {
+                print("Google user restored: \(user.profile?.name ?? "")")
+            }
+        }
+        return true
     }
-    
-    return true
-  }
-  
   func application(
     _ app: UIApplication,
     open url: URL,
