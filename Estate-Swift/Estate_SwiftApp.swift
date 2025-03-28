@@ -14,7 +14,7 @@ import Security
 
 class AppDelegate: NSObject, UIApplicationDelegate {
 
-    var facebookAppID: String?
+       var facebookAppID: String?
        var facebookClientToken: String?
        var googleClientID: String?
 
@@ -36,6 +36,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
         return true
     }
+    
   func application(
     _ app: UIApplication,
     open url: URL,
