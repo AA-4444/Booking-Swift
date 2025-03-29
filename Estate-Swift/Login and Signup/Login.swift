@@ -119,9 +119,20 @@ struct Login: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 30, height: 30)
                         }
-                        .frame(width: 158,height: 70)
+                        .frame(width:
+                               DeviceHelper.adaptivePadding(
+                                   small: 140,
+                                   medium: 158,
+                                   pro: 158,
+                                   proMax: 158
+                               ),height: DeviceHelper.adaptivePadding(
+                                small: 68,
+                                medium: 70,
+                                pro: 70,
+                                proMax: 70
+                            ))
                         .background(Color.gray.opacity(0.2))
-                        .cornerRadius(15)
+                        .cornerRadius(25)
                         
                         
                         //MARK: Facebook button...
@@ -133,9 +144,20 @@ struct Login: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 25,height: 25)
                         }
-                        .frame(width: 158,height: 70)
+                        .frame(width:
+                               DeviceHelper.adaptivePadding(
+                                   small: 140,
+                                   medium: 158,
+                                   pro: 158,
+                                   proMax: 158
+                               ),height: DeviceHelper.adaptivePadding(
+                                small: 68,
+                                medium: 70,
+                                pro: 70,
+                                proMax: 70
+                            ))
                         .background(Color.gray.opacity(0.2))
-                        .cornerRadius(15)
+                        .cornerRadius(25)
                     }
                     .padding(.top,5)
                     .padding(.bottom ,5)
@@ -223,7 +245,7 @@ struct Login: View {
             
             // Facebook login successful, process the user info
             if let accessToken = AccessToken.current {
-                // Now you have the access token, you can get the user's info
+               
                 print("Facebook user logged in: \(accessToken.userID)")
                 
                 // Fetch the user's profile info (e.g., name, email)
@@ -239,10 +261,10 @@ struct Login: View {
                         let userName = userDetails["name"] as? String ?? "Unknown User"
                         let userEmail = userDetails["email"] as? String ?? "No Email"
                         
-                        // Now you can use the user details in your app
+                       
                         print("User name: \(userName), Email: \(userEmail)")
                         
-                        // Optionally, set the user object
+                        
                         self.user = User(name: userName)
                     }
                 }

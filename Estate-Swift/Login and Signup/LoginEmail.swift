@@ -70,11 +70,26 @@ struct LoginEmail: View {
                                     .foregroundColor(.black)
                                     .disableAutocorrection(true)
                             }
-                            .frame(width: 327, height: 70)
+                            .frame(width: DeviceHelper.adaptivePadding(
+                                small: 300,
+                                medium: 327,
+                                pro: 327,
+                                proMax: 337
+                            ), height:  DeviceHelper.adaptivePadding(
+                                small: 60,
+                                medium: 70,
+                                pro: 70,
+                                proMax: 70
+                            ))
                             .background(Color.gray.opacity(0.2))
                             .cornerRadius(15)
                             .padding(.horizontal)
-                            .padding(.top,20)
+                            .padding(.top ,DeviceHelper.adaptivePadding(
+                                small: 5,
+                                medium: 20,
+                                pro: 20,
+                                proMax: 20
+                            ))
                             
                             //Password
                             HStack {
@@ -86,14 +101,35 @@ struct LoginEmail: View {
                                     .foregroundColor(.black)
                                     .disableAutocorrection(true)
                             }
-                            .frame(width: 327, height: 70)
+                           // .frame(width: 327, height: 70)
+                            .frame(width: DeviceHelper.adaptivePadding(
+                                small: 300,
+                                medium: 327,
+                                pro: 327,
+                                proMax: 337
+                            ), height:  DeviceHelper.adaptivePadding(
+                                small: 60,
+                                medium: 70,
+                                pro: 70,
+                                proMax: 70
+                            ))
                             .background(Color.gray.opacity(0.2))
                             .cornerRadius(15)
                             .padding(.horizontal)
-                            .padding(.top,20)
+                            .padding(.top, DeviceHelper.adaptivePadding(
+                                small: 10,
+                                medium: 20,
+                                pro: 20,
+                                proMax: 20
+                            ))
                             
                             // Forgot and Show Pass
-                            HStack(spacing: 90){
+                            HStack(spacing: DeviceHelper.adaptivePadding(
+                                small: 70,
+                                medium: 90,
+                                pro: 90,
+                                proMax: 90
+                            )){
                                 Button {
                                     
                                 } label : {
@@ -128,11 +164,39 @@ struct LoginEmail: View {
                             .padding(.top,5)
                         }
                         
+                        Button {
+                            
+                        } label: {
+                            Text("Login")
+                                .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
+                                    small: 22,
+                                    medium: 22,
+                                    pro: 22,
+                                    proMax: 22
+                                )))
+                                .foregroundColor(.white)
+                                .frame(width: DeviceHelper.adaptivePadding(
+                                    small: 250,
+                                    medium: 278,
+                                    pro: 278,
+                                    proMax: 278
+                                ),height: DeviceHelper.adaptivePadding(
+                                    small: 50,
+                                    medium: 63,
+                                    pro: 63,
+                                    proMax: 63
+                                ))
+                              
+                        }
+                        .background(Color("Color1"))
+                        .cornerRadius(10)
+                        .padding(.top,20)
+                        
                         Spacer().frame(height:  DeviceHelper.adaptivePadding(
-                            small: 18,
+                            small: 10,
                             medium: 140,
-                            pro: 140,
-                            proMax: 190
+                            pro: 90,
+                            proMax: 120
                         ))
                         
                         VStack {
@@ -179,9 +243,20 @@ struct LoginEmail: View {
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 30, height: 30)
                                 }
-                                .frame(width: 158,height: 70)
+                                .frame(width:
+                                       DeviceHelper.adaptivePadding(
+                                           small: 140,
+                                           medium: 158,
+                                           pro: 158,
+                                           proMax: 158
+                                       ),height: DeviceHelper.adaptivePadding(
+                                        small: 68,
+                                        medium: 70,
+                                        pro: 70,
+                                        proMax: 70
+                                    ))
                                 .background(Color.gray.opacity(0.2))
-                                .cornerRadius(15)
+                                .cornerRadius(25)
                                 
                                 
                                 //MARK: Facebook button...
@@ -193,9 +268,20 @@ struct LoginEmail: View {
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 25,height: 25)
                                 }
-                                .frame(width: 158,height: 70)
+                                .frame(width:
+                                       DeviceHelper.adaptivePadding(
+                                           small: 140,
+                                           medium: 158,
+                                           pro: 158,
+                                           proMax: 158
+                                       ),height: DeviceHelper.adaptivePadding(
+                                        small: 68,
+                                        medium: 70,
+                                        pro: 70,
+                                        proMax: 70
+                                    ))
                                 .background(Color.gray.opacity(0.2))
-                                .cornerRadius(15)
+                                .cornerRadius(25)
                             }
                             .padding(.top,5)
                             .padding(.bottom ,5)
@@ -216,6 +302,9 @@ struct LoginEmail: View {
                                 pro: 0,
                                 proMax: 0
                             ))
+                            
+                            
+                           
                         }
                       
                     }

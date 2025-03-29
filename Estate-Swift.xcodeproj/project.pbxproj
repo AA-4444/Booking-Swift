@@ -271,7 +271,6 @@
 				9A122B652D908EA900E4A2AC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
-				9AB55FFD2D959BDD0063547D /* XCRemoteSwiftPackageReference "dotenv-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A122ACD2D908C0100E4A2AC /* Products */;
@@ -674,14 +673,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 14.1.0;
-			};
-		};
-		9AB55FFD2D959BDD0063547D /* XCRemoteSwiftPackageReference "dotenv-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/levibostian/dotenv-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
