@@ -8,11 +8,9 @@
 import SwiftUI
 
 enum AppRoute: Hashable {
-    case start
-    case onboarding1
-    case onboarding2
-    case onboarding3
+    case onboardingview
     case login
+    case register
     case loginemail
-   // case home
+    case success(username: String)
 }

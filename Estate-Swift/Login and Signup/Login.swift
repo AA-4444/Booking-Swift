@@ -73,8 +73,9 @@ struct Login: View {
                         
                     }
                     .frame(width: 326,height: 63)
-                    .background(Color("Color1"))
+                    .background(Color.black)
                     .cornerRadius(15)
+                    .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
                     
                     //Divider
                     HStack {
@@ -131,8 +132,9 @@ struct Login: View {
                                 pro: 70,
                                 proMax: 70
                             ))
-                        .background(Color.gray.opacity(0.2))
+                        .background(Color.white)
                         .cornerRadius(25)
+                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                         
                         
                         //MARK: Facebook button...
@@ -156,19 +158,27 @@ struct Login: View {
                                 pro: 70,
                                 proMax: 70
                             ))
-                        .background(Color.gray.opacity(0.2))
+                        .background(Color.white)
                         .cornerRadius(25)
+                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     }
                     .padding(.top,5)
                     .padding(.bottom ,5)
                 }
                 
                 HStack {
-                    Text("Don't have an account?")
-                        .font(.custom("Lato-Regular", size: 15))
-                    +
-                    Text(" Register")
-                        .font(.custom("Lato-Black", size: 15))
+                    
+                    Button {
+                        path.append(AppRoute.register)
+                    } label: {
+                        Text("Don't have an account?")
+                            .font(.custom("Lato-Regular", size: 15))
+                            .foregroundColor(.black)
+                        +
+                        Text(" Register")
+                            .font(.custom("Lato-Black", size: 15))
+                            .foregroundColor(.black)
+                    }
                 }
                     .padding(.bottom,15)
                 

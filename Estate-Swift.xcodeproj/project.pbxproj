@@ -23,6 +23,8 @@
 		9A122CF22D91D4B500E4A2AC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CF12D91D4B500E4A2AC /* FirebaseDatabase */; };
 		9A122CF42D91D4CA00E4A2AC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CF32D91D4CA00E4A2AC /* FirebaseAuth */; };
 		9A122CF62D91D5E900E4A2AC /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CF52D91D5E900E4A2AC /* FacebookShare */; };
+		9A38CBE32D98233D0058DB6B /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 9A38CBE22D98233C0058DB6B /* RiveRuntime */; };
+		9A38CC0C2D984F4B0058DB6B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,11 +91,13 @@
 				9A122CE72D91CD7300E4A2AC /* FacebookBasics in Frameworks */,
 				9A122CE92D91CD7300E4A2AC /* FacebookCore in Frameworks */,
 				9A122CE52D91CD7300E4A2AC /* FacebookAEM in Frameworks */,
+				9A38CC0C2D984F4B0058DB6B /* FirebaseFirestore in Frameworks */,
 				9A122CE22D91C2D400E4A2AC /* FirebaseAppDistribution-Beta in Frameworks */,
 				9A122B672D908EA900E4A2AC /* GoogleSignIn in Frameworks */,
 				9A122CDE2D91C2D400E4A2AC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				9A122B692D908EA900E4A2AC /* GoogleSignInSwift in Frameworks */,
 				9A122CF02D91D4AA00E4A2AC /* FirebaseCore in Frameworks */,
+				9A38CBE32D98233D0058DB6B /* RiveRuntime in Frameworks */,
 				9A122CF62D91D5E900E4A2AC /* FacebookShare in Frameworks */,
 				9A122CED2D91CD7300E4A2AC /* FacebookLogin in Frameworks */,
 				9A122CDA2D91C2D400E4A2AC /* FirebaseAnalytics in Frameworks */,
@@ -184,6 +188,8 @@
 				9A122CF12D91D4B500E4A2AC /* FirebaseDatabase */,
 				9A122CF32D91D4CA00E4A2AC /* FirebaseAuth */,
 				9A122CF52D91D5E900E4A2AC /* FacebookShare */,
+				9A38CBE22D98233C0058DB6B /* RiveRuntime */,
+				9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */,
 			);
 			productName = "Estate-Swift";
 			productReference = 9A122ACC2D908C0100E4A2AC /* Estate-Swift.app */;
@@ -271,6 +277,7 @@
 				9A122B652D908EA900E4A2AC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				9A38CBE12D98233C0058DB6B /* XCRemoteSwiftPackageReference "rive-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A122ACD2D908C0100E4A2AC /* Products */;
@@ -675,6 +682,14 @@
 				minimumVersion = 14.1.0;
 			};
 		};
+		9A38CBE12D98233C0058DB6B /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -757,6 +772,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookShare;
+		};
+		9A38CBE22D98233C0058DB6B /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A38CBE12D98233C0058DB6B /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+		9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

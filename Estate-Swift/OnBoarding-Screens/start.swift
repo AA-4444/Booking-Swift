@@ -47,7 +47,7 @@ struct StartView: View {
                 
                 VStack {
                     Button {
-                        path.append(AppRoute.onboarding1)
+                    //    path.append(AppRoute.onboarding1)
                     } label: {
                         Text("Let's Start")
                             .foregroundColor(.white)
