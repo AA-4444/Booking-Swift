@@ -7,11 +7,13 @@
 
 import SwiftUI
 import RiveRuntime
-
+import ConfettiSwiftUI
 struct Success: View {
     @Binding var path: NavigationPath
     @State var showModal = false
     @Binding var show: Bool
+    @State private var trigger: Int = 0
+    @State private var cardScale: CGFloat = 0.5
     
     let username: String
     var body: some View {
@@ -22,6 +24,8 @@ struct Success: View {
            
             
             VStack(spacing: 15){
+                
+
                 Image(systemName: "checkmark.circle")
                 .foregroundColor(Color.green)
                 .font(.system(size: 60))
@@ -58,6 +62,7 @@ struct Success: View {
             
             
         }
+        .confettiCannon(trigger: $trigger ,confettiSize: 20)
         
         .background(
             RiveViewModel(fileName: "shapes").view()
@@ -73,6 +78,16 @@ struct Success: View {
         )
         
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+                   // Trigger card scale animation
+                   withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                       cardScale = 1.0
+                   }
+                   // Trigger confetti animation after the card animation
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                       trigger += 1
+                   }
+               }
     }
 }
 

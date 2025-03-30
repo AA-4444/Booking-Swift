@@ -25,6 +25,7 @@
 		9A122CF62D91D5E900E4A2AC /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CF52D91D5E900E4A2AC /* FacebookShare */; };
 		9A38CBE32D98233D0058DB6B /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 9A38CBE22D98233C0058DB6B /* RiveRuntime */; };
 		9A38CC0C2D984F4B0058DB6B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */; };
+		9AC68EB72D98EE730031C7BC /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9AC68EB62D98EE730031C7BC /* ConfettiSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,19 @@
 			remoteInfo = "Estate-Swift";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A38CC222D98D85D0058DB6B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9A122ACC2D908C0100E4A2AC /* Estate-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Estate-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +104,7 @@
 				9A122CF42D91D4CA00E4A2AC /* FirebaseAuth in Frameworks */,
 				9A122CE72D91CD7300E4A2AC /* FacebookBasics in Frameworks */,
 				9A122CE92D91CD7300E4A2AC /* FacebookCore in Frameworks */,
+				9AC68EB72D98EE730031C7BC /* ConfettiSwiftUI in Frameworks */,
 				9A122CE52D91CD7300E4A2AC /* FacebookAEM in Frameworks */,
 				9A38CC0C2D984F4B0058DB6B /* FirebaseFirestore in Frameworks */,
 				9A122CE22D91C2D400E4A2AC /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -162,6 +177,7 @@
 				9A122AC82D908C0100E4A2AC /* Sources */,
 				9A122AC92D908C0100E4A2AC /* Frameworks */,
 				9A122ACA2D908C0100E4A2AC /* Resources */,
+				9A38CC222D98D85D0058DB6B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +206,7 @@
 				9A122CF52D91D5E900E4A2AC /* FacebookShare */,
 				9A38CBE22D98233C0058DB6B /* RiveRuntime */,
 				9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */,
+				9AC68EB62D98EE730031C7BC /* ConfettiSwiftUI */,
 			);
 			productName = "Estate-Swift";
 			productReference = 9A122ACC2D908C0100E4A2AC /* Estate-Swift.app */;
@@ -278,6 +295,7 @@
 				9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				9A38CBE12D98233C0058DB6B /* XCRemoteSwiftPackageReference "rive-ios" */,
+				9AC68EB52D98EE730031C7BC /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A122ACD2D908C0100E4A2AC /* Products */;
@@ -690,6 +708,14 @@
 				minimumVersion = 6.7.3;
 			};
 		};
+		9AC68EB52D98EE730031C7BC /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -782,6 +808,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		9AC68EB62D98EE730031C7BC /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9AC68EB52D98EE730031C7BC /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
