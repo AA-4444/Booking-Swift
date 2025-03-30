@@ -26,6 +26,7 @@
 		9A38CBE32D98233D0058DB6B /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 9A38CBE22D98233C0058DB6B /* RiveRuntime */; };
 		9A38CC0C2D984F4B0058DB6B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */; };
 		9AC68EB72D98EE730031C7BC /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9AC68EB62D98EE730031C7BC /* ConfettiSwiftUI */; };
+		9AC68EBD2D99AAAB0031C7BC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9AC68EBC2D99AAAB0031C7BC /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 				9A122B692D908EA900E4A2AC /* GoogleSignInSwift in Frameworks */,
 				9A122CF02D91D4AA00E4A2AC /* FirebaseCore in Frameworks */,
 				9A38CBE32D98233D0058DB6B /* RiveRuntime in Frameworks */,
+				9AC68EBD2D99AAAB0031C7BC /* FirebaseStorage in Frameworks */,
 				9A122CF62D91D5E900E4A2AC /* FacebookShare in Frameworks */,
 				9A122CED2D91CD7300E4A2AC /* FacebookLogin in Frameworks */,
 				9A122CDA2D91C2D400E4A2AC /* FirebaseAnalytics in Frameworks */,
@@ -207,6 +209,7 @@
 				9A38CBE22D98233C0058DB6B /* RiveRuntime */,
 				9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */,
 				9AC68EB62D98EE730031C7BC /* ConfettiSwiftUI */,
+				9AC68EBC2D99AAAB0031C7BC /* FirebaseStorage */,
 			);
 			productName = "Estate-Swift";
 			productReference = 9A122ACC2D908C0100E4A2AC /* Estate-Swift.app */;
@@ -813,6 +816,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9AC68EB52D98EE730031C7BC /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
+		};
+		9AC68EBC2D99AAAB0031C7BC /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

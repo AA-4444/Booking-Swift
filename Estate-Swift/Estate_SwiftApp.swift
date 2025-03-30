@@ -88,6 +88,8 @@ struct Estate_SwiftApp: App {
                                 LoginEmail(user: $user,path: $path)
                             case .success(let username):
                                 Success(path: $path, show: .constant(true), username: username)
+                            case .setup:
+                                Setup(path: $path)
                         }
                     }
             }

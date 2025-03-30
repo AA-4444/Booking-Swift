@@ -13,4 +13,5 @@ enum AppRoute: Hashable {
     case register
     case loginemail
     case success(username: String)
+    case setup
 }

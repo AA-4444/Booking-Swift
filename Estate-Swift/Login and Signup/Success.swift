@@ -26,23 +26,23 @@ struct Success: View {
             VStack(spacing: 15){
                 
 
-                Image(systemName: "checkmark.circle")
+                Text( "🎉")
                 .foregroundColor(Color.green)
-                .font(.system(size: 60))
+                .font(.system(size: 90))
                 
                 Text("Succesfull registration")
-                    .font(.custom("Lato-Regular", size: 20))
+                    .font(.custom("Lato-Regular", size: 21))
                     .foregroundColor(Color.black)
                 
                 Text(username)
-                                  .font(.custom("Lato-Regular", size: 20))
+                                  .font(.custom("Lato-Black", size: 20))
                                   .foregroundColor(Color.black)
                 
                 
                 Button {
-                    
+                    path.append(AppRoute.setup)
                 } label: {
-                    Label("Go to Login", systemImage: "arrow.forward" )
+                   Text("Let's setup")
                         .font(.custom("Lato-Regular", size: 16))
                         .foregroundColor(.white)
                     

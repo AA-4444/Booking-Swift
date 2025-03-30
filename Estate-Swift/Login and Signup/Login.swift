@@ -119,6 +119,8 @@ struct Login: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 30, height: 30)
+                                        .padding() // Adds padding to expand the content
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         }
                         .frame(width:
                                DeviceHelper.adaptivePadding(
@@ -144,7 +146,9 @@ struct Login: View {
                             Image("facebook")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 25,height: 25)
+                                .frame(width: 25, height: 25)
+                                        .padding()
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         }
                         .frame(width:
                                DeviceHelper.adaptivePadding(
@@ -214,73 +218,62 @@ struct Login: View {
     }
     
     
-    
-    //MARK: Google login Function
-    func handleSignupButton() {
-        print("Login with Google")
-        
-        if let rootViewController = getRootViewController() {
-            GIDSignIn.sharedInstance.signIn(
-                withPresenting: rootViewController
-            ) { singInResult, error in
-                guard let result = singInResult else {
-                    // inspect error
-                    return
-                }
-                self.user = User.init(name: result.user.profile?.name ?? "")
-            }
-        }
-        
-        
-        
-       
-    }
-    
-    //MARK:  Facebook Login Function
-    func loginWithFacebook() {
-        let loginManager = LoginManager()
-        
-        // Requesting permissions to access user data
-        loginManager.logIn(permissions: ["public_profile", "email"], from: nil) { result, error in
-            if let error = error {
-                print("Error during Facebook login: \(error.localizedDescription)")
-                return
-            }
-            
-            // Check if the login was cancelled
-            guard let result = result, !result.isCancelled else {
-                print("Facebook login was cancelled")
-                return
-            }
-            
-            // Facebook login successful, process the user info
-            if let accessToken = AccessToken.current {
-               
-                print("Facebook user logged in: \(accessToken.userID)")
-                
-                // Fetch the user's profile info (e.g., name, email)
-                let request = GraphRequest(graphPath: "me", parameters: ["fields": "id,name,email"])
-                request.start { connection, result, error in
-                    if let error = error {
-                        print("Error fetching Facebook user details: \(error.localizedDescription)")
-                        return
-                    }
-                    
-                    // Handle the returned user data
-                    if let userDetails = result as? [String: Any] {
-                        let userName = userDetails["name"] as? String ?? "Unknown User"
-                        let userEmail = userDetails["email"] as? String ?? "No Email"
-                        
-                       
-                        print("User name: \(userName), Email: \(userEmail)")
-                        
-                        
-                        self.user = User(name: userName)
-                    }
-                }
-            }
-        }
-    }
+    // Google login function
+     func handleSignupButton() {
+         print("Login with Google")
+         
+         if let rootViewController = getRootViewController() {
+             GIDSignIn.sharedInstance.signIn(
+                 withPresenting: rootViewController
+             ) { signInResult, error in
+                 guard let result = signInResult else {
+                     print("Google Sign-In error: \(error?.localizedDescription ?? "Unknown error")")
+                     return
+                 }
+                 
+                 let userName = result.user.profile?.name ?? "Google User"
+                 self.user = User(name: userName)
+                 path.append(AppRoute.success(username: userName))
+                 print("Google login successful for user: \(userName)")
+             }
+         }
+     }
+     
+     // Facebook login function
+     func loginWithFacebook() {
+         let loginManager = LoginManager()
+         
+         loginManager.logIn(permissions: ["public_profile", "email"], from: nil) { result, error in
+             if let error = error {
+                 print("Error during Facebook login: \(error.localizedDescription)")
+                 return
+             }
+             
+             guard let result = result, !result.isCancelled else {
+                 print("Facebook login was cancelled")
+                 return
+             }
+             
+             if let accessToken = AccessToken.current {
+                 print("Facebook user logged in: \(accessToken.userID)")
+                 
+                 let request = GraphRequest(graphPath: "me", parameters: ["fields": "id,name,email"])
+                 request.start { connection, result, error in
+                     if let error = error {
+                         print("Error fetching Facebook user details: \(error.localizedDescription)")
+                         return
+                     }
+                     
+                     if let userDetails = result as? [String: Any] {
+                         let userName = userDetails["name"] as? String ?? "Facebook User"
+                         self.user = User(name: userName)
+                         path.append(AppRoute.success(username: userName))
+                         print("Facebook login successful for user: \(userName)")
+                     }
+                 }
+             }
+         }
+     }
 
 
 }
