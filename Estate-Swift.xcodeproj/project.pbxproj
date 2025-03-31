@@ -14,15 +14,9 @@
 		9A122CDE2D91C2D400E4A2AC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CDD2D91C2D400E4A2AC /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		9A122CE02D91C2D400E4A2AC /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CDF2D91C2D400E4A2AC /* FirebaseAppCheck */; };
 		9A122CE22D91C2D400E4A2AC /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CE12D91C2D400E4A2AC /* FirebaseAppDistribution-Beta */; };
-		9A122CE52D91CD7300E4A2AC /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CE42D91CD7300E4A2AC /* FacebookAEM */; };
-		9A122CE72D91CD7300E4A2AC /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CE62D91CD7300E4A2AC /* FacebookBasics */; };
-		9A122CE92D91CD7300E4A2AC /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CE82D91CD7300E4A2AC /* FacebookCore */; };
-		9A122CEB2D91CD7300E4A2AC /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CEA2D91CD7300E4A2AC /* FacebookGamingServices */; };
-		9A122CED2D91CD7300E4A2AC /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CEC2D91CD7300E4A2AC /* FacebookLogin */; };
 		9A122CF02D91D4AA00E4A2AC /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CEF2D91D4AA00E4A2AC /* FirebaseCore */; };
 		9A122CF22D91D4B500E4A2AC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CF12D91D4B500E4A2AC /* FirebaseDatabase */; };
 		9A122CF42D91D4CA00E4A2AC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CF32D91D4CA00E4A2AC /* FirebaseAuth */; };
-		9A122CF62D91D5E900E4A2AC /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 9A122CF52D91D5E900E4A2AC /* FacebookShare */; };
 		9A38CBE32D98233D0058DB6B /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 9A38CBE22D98233C0058DB6B /* RiveRuntime */; };
 		9A38CC0C2D984F4B0058DB6B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */; };
 		9AC68EB72D98EE730031C7BC /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9AC68EB62D98EE730031C7BC /* ConfettiSwiftUI */; };
@@ -101,12 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A122CEB2D91CD7300E4A2AC /* FacebookGamingServices in Frameworks */,
 				9A122CF42D91D4CA00E4A2AC /* FirebaseAuth in Frameworks */,
-				9A122CE72D91CD7300E4A2AC /* FacebookBasics in Frameworks */,
-				9A122CE92D91CD7300E4A2AC /* FacebookCore in Frameworks */,
 				9AC68EB72D98EE730031C7BC /* ConfettiSwiftUI in Frameworks */,
-				9A122CE52D91CD7300E4A2AC /* FacebookAEM in Frameworks */,
 				9A38CC0C2D984F4B0058DB6B /* FirebaseFirestore in Frameworks */,
 				9A122CE22D91C2D400E4A2AC /* FirebaseAppDistribution-Beta in Frameworks */,
 				9A122B672D908EA900E4A2AC /* GoogleSignIn in Frameworks */,
@@ -115,8 +105,6 @@
 				9A122CF02D91D4AA00E4A2AC /* FirebaseCore in Frameworks */,
 				9A38CBE32D98233D0058DB6B /* RiveRuntime in Frameworks */,
 				9AC68EBD2D99AAAB0031C7BC /* FirebaseStorage in Frameworks */,
-				9A122CF62D91D5E900E4A2AC /* FacebookShare in Frameworks */,
-				9A122CED2D91CD7300E4A2AC /* FacebookLogin in Frameworks */,
 				9A122CDA2D91C2D400E4A2AC /* FirebaseAnalytics in Frameworks */,
 				9A122CE02D91C2D400E4A2AC /* FirebaseAppCheck in Frameworks */,
 				9A122CF22D91D4B500E4A2AC /* FirebaseDatabase in Frameworks */,
@@ -197,15 +185,9 @@
 				9A122CDD2D91C2D400E4A2AC /* FirebaseAnalyticsWithoutAdIdSupport */,
 				9A122CDF2D91C2D400E4A2AC /* FirebaseAppCheck */,
 				9A122CE12D91C2D400E4A2AC /* FirebaseAppDistribution-Beta */,
-				9A122CE42D91CD7300E4A2AC /* FacebookAEM */,
-				9A122CE62D91CD7300E4A2AC /* FacebookBasics */,
-				9A122CE82D91CD7300E4A2AC /* FacebookCore */,
-				9A122CEA2D91CD7300E4A2AC /* FacebookGamingServices */,
-				9A122CEC2D91CD7300E4A2AC /* FacebookLogin */,
 				9A122CEF2D91D4AA00E4A2AC /* FirebaseCore */,
 				9A122CF12D91D4B500E4A2AC /* FirebaseDatabase */,
 				9A122CF32D91D4CA00E4A2AC /* FirebaseAuth */,
-				9A122CF52D91D5E900E4A2AC /* FacebookShare */,
 				9A38CBE22D98233C0058DB6B /* RiveRuntime */,
 				9A38CC0B2D984F4B0058DB6B /* FirebaseFirestore */,
 				9AC68EB62D98EE730031C7BC /* ConfettiSwiftUI */,
@@ -296,7 +278,6 @@
 			packageReferences = (
 				9A122B652D908EA900E4A2AC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				9A38CBE12D98233C0058DB6B /* XCRemoteSwiftPackageReference "rive-ios" */,
 				9AC68EB52D98EE730031C7BC /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
@@ -504,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Estate-Swift/Estate-Swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Estate-Swift/Preview Content\"";
@@ -538,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Estate-Swift/Estate-Swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Estate-Swift/Preview Content\"";
@@ -695,14 +678,6 @@
 				minimumVersion = 11.10.0;
 			};
 		};
-		9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.1.0;
-			};
-		};
 		9A38CBE12D98233C0058DB6B /* XCRemoteSwiftPackageReference "rive-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rive-app/rive-ios.git";
@@ -757,31 +732,6 @@
 			package = 9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAppDistribution-Beta";
 		};
-		9A122CE42D91CD7300E4A2AC /* FacebookAEM */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookAEM;
-		};
-		9A122CE62D91CD7300E4A2AC /* FacebookBasics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookBasics;
-		};
-		9A122CE82D91CD7300E4A2AC /* FacebookCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookCore;
-		};
-		9A122CEA2D91CD7300E4A2AC /* FacebookGamingServices */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookGamingServices;
-		};
-		9A122CEC2D91CD7300E4A2AC /* FacebookLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookLogin;
-		};
 		9A122CEF2D91D4AA00E4A2AC /* FirebaseCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -796,11 +746,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9A122CD82D91C2D400E4A2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
-		};
-		9A122CF52D91D5E900E4A2AC /* FacebookShare */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A122CE32D91CD7300E4A2AC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookShare;
 		};
 		9A38CBE22D98233C0058DB6B /* RiveRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
