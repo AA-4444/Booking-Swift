@@ -69,6 +69,8 @@ struct Estate_SwiftApp: App {
                             Success(path: $path, show: .constant(true), username: username)
                         case .setup:
                             Setup(path: $path)
+                        case .cards:
+                        Cards(path: $path)
                         }
                     }
             }

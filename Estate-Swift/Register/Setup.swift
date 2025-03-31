@@ -319,73 +319,82 @@ struct Setup: View {
     }
     
     private func saveUserInfo() {
-        guard let userId = Auth.auth().currentUser?.uid else {
-            print("No user ID available")
-            return
-        }
-        
-        guard !name.isEmpty, !surname.isEmpty, !phoneNumber.isEmpty else {
-            print("All fields are required")
-            return
-        }
-        
-        var userData: [String: Any] = [
-            "name": name,
-            "surname": surname,
-            "phoneNumber": phoneNumber,
-            "email": email,
-            "userId": userId
-        ]
-        
-        if let selectedPhoto = selectedPhoto {
-            Task {
-                do {
-                    if let data = try await selectedPhoto.loadTransferable(type: Data.self) {
-                        let storageRef = Storage.storage().reference().child("profile_images/\(userId).jpg")
-                        let metadata = StorageMetadata()
-                        metadata.contentType = "image/jpeg"
-                        
-                        let uploadTask = storageRef.putData(data, metadata: metadata) { metadata, error in
-                            if let error = error {
-                                print("Error uploading image: \(error.localizedDescription)")
-                                return
-                            }
+            guard let userId = Auth.auth().currentUser?.uid else {
+                print("No user ID available")
+                return
+            }
+            
+            guard !name.isEmpty, !surname.isEmpty, !phoneNumber.isEmpty else {
+                print("All fields are required")
+                return
+            }
+            
+            var userData: [String: Any] = [
+                "name": name,
+                "surname": surname,
+                "phoneNumber": phoneNumber,
+                "email": email,
+                "userId": userId
+            ]
+            
+            if let selectedPhoto = selectedPhoto {
+                Task {
+                    do {
+                        if let data = try await selectedPhoto.loadTransferable(type: Data.self) {
+                            let storageRef = Storage.storage().reference().child("profile_images/\(userId).jpg")
+                            let metadata = StorageMetadata()
+                            metadata.contentType = "image/jpeg"
                             
-                            storageRef.downloadURL { url, error in
+                            let uploadTask = storageRef.putData(data, metadata: metadata) { metadata, error in
                                 if let error = error {
-                                    print("Error getting download URL: \(error.localizedDescription)")
-                                } else if let downloadURL = url {
-                                    userData["profileImageURL"] = downloadURL.absoluteString
-                                    saveToFirestore(userData: userData, userId: userId)
+                                    print("Error uploading image: \(error.localizedDescription)")
+                                    // Save to Firestore even if image upload fails
+                                    self.saveToFirestore(userData: userData, userId: userId)
+                                    return
+                                }
+                                
+                                storageRef.downloadURL { url, error in
+                                    if let error = error {
+                                        print("Error getting download URL: \(error.localizedDescription)")
+                                    } else if let downloadURL = url {
+                                        userData["profileImageURL"] = downloadURL.absoluteString
+                                    }
+                                    // Save to Firestore regardless of download URL success
+                                    self.saveToFirestore(userData: userData, userId: userId)
                                 }
                             }
+                            
+                            uploadTask.observe(.progress) { snapshot in
+                                let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+                                print("Upload progress: \(percentComplete)%")
+                            }
                         }
-                        
-                        uploadTask.observe(.progress) { snapshot in
-                            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
-                            print("Upload progress: \(percentComplete)%")
-                        }
+                    } catch {
+                        print("Error loading image data: \(error.localizedDescription)")
+                        self.saveToFirestore(userData: userData, userId: userId)
                     }
-                } catch {
-                    print("Error loading image data: \(error.localizedDescription)")
-                    saveToFirestore(userData: userData, userId: userId)
+                }
+            } else {
+                saveToFirestore(userData: userData, userId: userId)
+            }
+        }
+        
+        private func saveToFirestore(userData: [String: Any], userId: String) {
+            let db = Firestore.firestore()
+            db.collection("users").document(userId).setData(userData) { error in
+                if let error = error {
+                    print("Error saving user info: \(error.localizedDescription)")
+                } else {
+                    print("User info saved successfully for user: \(userId)")
+                    // Add a slight delay to ensure the navigation stack is ready
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        print("Navigating to Cards view, current path before append: \(self.path)")
+                        self.path.append(AppRoute.cards)
+                        print("Path after appending .cards: \(self.path)")
+                    }
                 }
             }
-        } else {
-            saveToFirestore(userData: userData, userId: userId)
         }
-    }
-    
-    private func saveToFirestore(userData: [String: Any], userId: String) {
-        let db = Firestore.firestore()
-        db.collection("users").document(userId).setData(userData) { error in
-            if let error = error {
-                print("Error saving user info: \(error.localizedDescription)")
-            } else {
-                print("User info saved successfully for user: \(userId)")
-            }
-        }
-    }
 }
 
 #Preview {
