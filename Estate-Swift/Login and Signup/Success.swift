@@ -48,7 +48,7 @@ struct Success: View {
                     
                 }
                 .frame(width: 190,height: 53)
-                .background(Color.black)
+                .background(Color("Color2"))
                 .cornerRadius(15)
                 .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
                 

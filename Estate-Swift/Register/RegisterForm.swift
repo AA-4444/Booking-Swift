@@ -80,7 +80,7 @@ struct RegisterForm: View {
                         pro: 30,
                         proMax: 30
                     )))
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("Color2"))
                 
             }
             .frame(maxWidth: .infinity,alignment: .leading)
@@ -122,7 +122,7 @@ struct RegisterForm: View {
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(isUsernameFocused ? Color.black : Color.clear, lineWidth: 2)
+                            .stroke(isUsernameFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                     )
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     .padding(.horizontal)
@@ -161,7 +161,7 @@ struct RegisterForm: View {
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(isEmailFocused ? Color.black : Color.clear, lineWidth: 2)
+                            .stroke(isEmailFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                     )
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     .padding(.horizontal)
@@ -196,7 +196,7 @@ struct RegisterForm: View {
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(isPasswordFocused ? Color.black : Color.clear, lineWidth: 2)
+                            .stroke(isPasswordFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                     )
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4) // Added shadow
                     .padding(.horizontal)
@@ -240,7 +240,7 @@ struct RegisterForm: View {
                                 .cornerRadius(15)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 15)
-                                        .stroke(isConfirmPasswordFocused ? Color.black : Color.clear, lineWidth: 2)
+                                        .stroke(isConfirmPasswordFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                                 )
                                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                                 .padding(.horizontal)
@@ -371,7 +371,7 @@ struct RegisterForm: View {
                         ))
                     
                 }
-                .background(Color.black)
+                .background(Color("Color2"))
                 
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 6)

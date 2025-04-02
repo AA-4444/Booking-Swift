@@ -46,7 +46,7 @@ struct OnboardingView: View {
                     .foregroundColor(.white)
                     .font(.custom("Lato-Bold",size: 20))
                     .frame(width: 190, height: 54)
-                    .background(Color.black)
+                    .background(Color("Color2"))
                     .cornerRadius(15)
             }
             

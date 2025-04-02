@@ -38,9 +38,16 @@ struct Cards: View {
             VStack {
                 //MARK: Header View
                 HStack {
-                    Text("Add Card")
-                        .font(.custom("Lato-Black", size: 25))
-                        .padding(.leading, 10)
+                    HStack {
+                        Text("Add")
+                            .font(.custom("Lato-Regular", size: 25))
+                            .padding(.leading, 10)
+                            .foregroundColor(Color.black)
+                        
+                        Text("Card")
+                            .font(.custom("Lato-Black", size: 25))
+                            .foregroundColor(Color("Color2"))
+                    }
 
                     Spacer(minLength: 0)
                     
@@ -134,7 +141,7 @@ struct Cards: View {
                         }
                         .padding(.vertical, 12)
                         .padding(.horizontal, 20)
-                        .background(Color.black)
+                        .background(Color("Color2"))
                         .cornerRadius(8)
                         .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 2)
 
@@ -144,61 +151,60 @@ struct Cards: View {
                 
                 Spacer(minLength: 0)
                 
-             
-                Button {
-                    if isFormValid {
-                        if let editingCard = editingCard {
-                            // Update the existing card
-                            if let index = cards.firstIndex(where: { $0.id == editingCard.id }) {
-                                cards[index] = CardInfo(
-                                    cardNumber: cardNumber,
-                                    cardHolderName: cardHolderName,
-                                    cvvCode: cvvCode,
-                                    expireDate: expireDate,
-                                    selectedCard: selectedCard
-                                )
-                                print("Updated card at index \(index). New card count: \(cards.count)")
-                            }
-                        } else {
-                            // Add a new card
-                            let newCard = CardInfo(
-                                cardNumber: cardNumber,
-                                cardHolderName: cardHolderName,
-                                cvvCode: cvvCode,
-                                expireDate: expireDate,
-                                selectedCard: selectedCard
-                            )
-                            cards.append(newCard)
-                            print("Added new card: \(newCard.cardNumber), ID: \(newCard.id). Total cards: \(cards.count)")
-                        }
-                        isCardAdded = true
-                        // Reset form
-                        cardNumber = ""
-                        cardHolderName = ""
-                        cvvCode = ""
-                        expireDate = ""
-                        selectedCard = "Card1"
-                        editingCard = nil
-                    }
-                } label: {
-                    Label(editingCard == nil ? "Add Card" : "Update Card", systemImage: "lock")
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding(.vertical, 20)
-                        .frame(maxWidth: 300)
-                }
-                .background(Color.black)
-                .cornerRadius(15)
-                .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 5)
-                // Disabling Action Until All Details are Filled
-                .disableWithOpacity(!isFormValid || showCardList) // Disable when showing card list
+
             }
             .padding()
-            .padding(.bottom,10)
-            .toolbar(.hidden, for: .navigationBar)
-            // Always Visible Toolbar
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
+            .padding(.bottom,20)
+        
+        Button {
+            if isFormValid {
+                if let editingCard = editingCard {
+                    // Update the existing card
+                    if let index = cards.firstIndex(where: { $0.id == editingCard.id }) {
+                        cards[index] = CardInfo(
+                            cardNumber: cardNumber,
+                            cardHolderName: cardHolderName,
+                            cvvCode: cvvCode,
+                            expireDate: expireDate,
+                            selectedCard: selectedCard
+                        )
+                        print("Updated card at index \(index). New card count: \(cards.count)")
+                    }
+                } else {
+                    // Add a new card
+                    let newCard = CardInfo(
+                        cardNumber: cardNumber,
+                        cardHolderName: cardHolderName,
+                        cvvCode: cvvCode,
+                        expireDate: expireDate,
+                        selectedCard: selectedCard
+                    )
+                    cards.append(newCard)
+                    print("Added new card: \(newCard.cardNumber), ID: \(newCard.id). Total cards: \(cards.count)")
+                }
+                isCardAdded = true
+                // Reset form
+                cardNumber = ""
+                cardHolderName = ""
+                cvvCode = ""
+                expireDate = ""
+                selectedCard = "Card1"
+                editingCard = nil
+            }
+        } label: {
+            Label(editingCard == nil ? "Add Card" : "Update Card", systemImage: "lock")
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .padding(.vertical, 20)
+                .frame(maxWidth: 300)
+        }
+        .background(Color("Color2"))
+        .cornerRadius(15)
+        .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 5)
+        .padding(.bottom,10)
+        // Disabling Action Until All Details are Filled
+        .disableWithOpacity(!isFormValid || showCardList) // Disable when showing card list
+         
                     Button(action: {
                         if isCardAdded {
                             // Proceed to next field
@@ -226,15 +232,9 @@ struct Cards: View {
                             .cornerRadius(15)
                             .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 5)
                     }
-                    .padding(.bottom,20)
-                }
+                    .padding(.bottom,5)
                 
-            }
-            
-           
-   
-        
-        
+                    .navigationBarBackButtonHidden(true)
     }
     
     //MARK:  Check if card fields are filled
@@ -361,7 +361,7 @@ struct Cards: View {
                             .foregroundColor(.white)
                             .padding(.vertical, 10)
                             .frame(maxWidth: 300)
-                            .background(Color.black)
+                            .background(Color("Color2"))
                             .cornerRadius(15)
                     }
                     .padding(.bottom, 20)

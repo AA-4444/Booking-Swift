@@ -62,7 +62,7 @@ struct Login: View {
                     }
                 }
                 .frame(width: 326, height: 63)
-                .background(Color.black)
+                .background(Color("Color2"))
                 .cornerRadius(15)
                 .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
                 
@@ -162,7 +162,7 @@ struct Login: View {
                     +
                     Text(" Register")
                         .font(.custom("Lato-Black", size: 15))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("Color2"))
                 }
             }
             .padding(.bottom, 15)

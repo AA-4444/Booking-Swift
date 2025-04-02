@@ -50,7 +50,7 @@ struct Setup: View {
                             pro: 30,
                             proMax: 30
                         )))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("Color2"))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
@@ -174,7 +174,7 @@ struct Setup: View {
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(isNameFocused ? Color.black : Color.clear, lineWidth: 2)
+                            .stroke(isNameFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                     )
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     .padding(.horizontal)
@@ -204,7 +204,7 @@ struct Setup: View {
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(isSurnameFocused ? Color.black : Color.clear, lineWidth: 2)
+                            .stroke(isSurnameFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                     )
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     .padding(.horizontal)
@@ -235,7 +235,7 @@ struct Setup: View {
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(isPhoneNumberFocused ? Color.black : Color.clear, lineWidth: 2)
+                            .stroke(isPhoneNumberFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                     )
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     .padding(.horizontal)
@@ -292,7 +292,7 @@ struct Setup: View {
                             proMax: 63
                         ))
                 }
-                .background(Color.black)
+                .background(Color("Color2"))
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 6)
                 .padding(.top, 30)

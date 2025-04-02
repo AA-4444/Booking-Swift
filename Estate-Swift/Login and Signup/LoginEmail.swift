@@ -82,7 +82,7 @@ struct LoginEmail: View {
                         pro: 30,
                         proMax: 30
                     )))
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("Color2"))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
@@ -117,7 +117,7 @@ struct LoginEmail: View {
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(isEmailFocused ? Color.black : Color.clear, lineWidth: 2)
+                            .stroke(isEmailFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                     )
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     .padding(.horizontal)
@@ -152,7 +152,7 @@ struct LoginEmail: View {
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(isPasswordFocused ? Color.black : Color.clear, lineWidth: 2)
+                            .stroke(isPasswordFocused ? Color("Color2") : Color.clear, lineWidth: 2)
                     )
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     .padding(.horizontal)
@@ -223,7 +223,7 @@ struct LoginEmail: View {
                             proMax: 63
                         ))
                 }
-                .background(Color.black)
+                .background(Color("Color2"))
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 6)
                 .padding(.top, 20)
@@ -326,7 +326,7 @@ struct LoginEmail: View {
                             +
                             Text(" Register")
                                 .font(.custom("Lato-Black", size: 15))
-                                .foregroundColor(.black) // Fixed missing dot
+                                .foregroundColor(Color("Color2")) // Fixed missing dot
                         }
                     }
                     .padding(.top, 15)
