@@ -9,10 +9,11 @@ import SwiftUI
 import RiveRuntime
 
 struct OnboardingView: View {
+    let button = RiveViewModel(fileName: "button", autoPlay: false)
+    
     @State var showModal = false
     @Binding var show: Bool
     @Binding var path: NavigationPath
-    
     var body: some View {
         ZStack {
             Color("Shadow").ignoresSafeArea()
@@ -37,18 +38,36 @@ struct OnboardingView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
+      
             
             Button {
-               // path.append(AppRoute.onboarding1)
                 path.append(AppRoute.login)
             } label: {
-                Text("Let's Start")
-                    .foregroundColor(.white)
-                    .font(.custom("Lato-Bold",size: 20))
-                    .frame(width: 190, height: 54)
-                    .background(Color("Color2"))
+                HStack {
+                    Text("Let's Start")
+                        .foregroundColor(.white)
+                        .font(.custom("Lato-Bold",size: 20))
+                       
+                    
+                    Image(systemName: "arrow.forward")
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 20, weight: .bold))
+                    .padding(.top,3)
+                }
+                .frame(width: DeviceHelper.adaptivePadding(
+                    small: 190,
+                    medium: 190,
+                    pro: 190,
+                    proMax: 226
+                ), height: DeviceHelper.adaptivePadding(
+                    small: 54,
+                    medium: 54,
+                    pro: 54,
+                    proMax: 60
+                ))
+                .background(Color("Color2"))
                     .cornerRadius(15)
-            }
+           }
             
             Text("Find your dream home with ease. Explore rentals and properties for sale, view listings, get expert insights.")
                 .font(.custom("Lato-Regular" ,size: 17))
@@ -76,3 +95,6 @@ struct OnboardingView_Previews: PreviewProvider {
         OnboardingView(show: .constant(true),path: .constant(NavigationPath()))
     }
 }
+
+
+//Thanks for beautigull animation to DesignCode...

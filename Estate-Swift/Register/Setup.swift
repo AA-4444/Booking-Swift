@@ -29,6 +29,7 @@ struct Setup: View {
     @FocusState private var isNameFocused: Bool
     @FocusState private var isSurnameFocused: Bool
     @FocusState private var isPhoneNumberFocused: Bool
+    let testbutton = RiveViewModel(fileName: "testbutton", autoPlay: false)
     
     var body: some View {
         VStack {
@@ -272,30 +273,32 @@ struct Setup: View {
                 Button {
                     saveUserInfo()
                 } label: {
-                    Text("Save")
-                        .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
-                            small: 22,
+                   Text("Save")
+                      .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
+                           small: 22,
                             medium: 22,
-                            pro: 22,
-                            proMax: 22
+                            pro: 23,
+                            proMax: 25
                         )))
                         .foregroundColor(.white)
                         .frame(width: DeviceHelper.adaptivePadding(
-                            small: 250,
-                            medium: 278,
-                            pro: 278,
-                            proMax: 278
+                          small: 300,
+                           medium: 320,
+                           pro: 318,
+                           proMax: 380
                         ), height: DeviceHelper.adaptivePadding(
-                            small: 50,
-                            medium: 63,
-                            pro: 63,
-                            proMax: 63
-                        ))
+                            small: 63,
+                            medium: 68,
+                            pro: 68,
+                            proMax: 70
+                    ))
                 }
                 .background(Color("Color2"))
-                .cornerRadius(10)
+                .cornerRadius(15)
                 .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 6)
                 .padding(.top, 30)
+                
+                
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)

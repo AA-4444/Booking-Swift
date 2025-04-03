@@ -8,11 +8,13 @@
 import SwiftUI
 import GoogleSignIn
 import FirebaseAuth
+import RiveRuntime
 
 struct Login: View {
     @Binding var user: User?
     @Binding var path: NavigationPath
     let images = ["Image1", "Image2", "Image3", "Image4"]
+    let testbutton = RiveViewModel(fileName: "testbutton", autoPlay: false)
     
     var body: some View {
         VStack(spacing: DeviceHelper.adaptivePadding(
@@ -46,7 +48,7 @@ struct Login: View {
                 .padding(.bottom, 20)
             
             VStack {
-                // Email login
+                //  login
                 Button {
                     path.append(AppRoute.loginemail)
                 } label: {
@@ -60,11 +62,24 @@ struct Login: View {
                             .font(.custom("Lato-Black", size: 20))
                             .foregroundColor(.white)
                     }
+                        .frame(width: DeviceHelper.adaptivePadding(
+                           small: 292,
+                           medium: 326,
+                           pro: 326,
+                           proMax: 326
+                        ), height: DeviceHelper.adaptivePadding(
+                            small: 64,
+                            medium: 68,
+                            pro: 68,
+                            proMax: 68
+                    ))
                 }
-                .frame(width: 326, height: 63)
                 .background(Color("Color2"))
                 .cornerRadius(15)
-                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+                  .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 6)
+                
+         
+
                 
                 // Divider
                 HStack {

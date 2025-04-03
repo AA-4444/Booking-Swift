@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import RiveRuntime
 
 struct CardInfo: Identifiable {
     let id = UUID()
@@ -32,6 +33,7 @@ struct Cards: View {
     @State private var showCardList: Bool = false
     @State private var cards: [CardInfo] = [] // Store multiple cards
     @State private var editingCard: CardInfo? // Track the card being edited
+    let testbutton = RiveViewModel(fileName: "testbutton", autoPlay: false)
     
     var body: some View {
     
@@ -155,6 +157,8 @@ struct Cards: View {
             }
             .padding()
             .padding(.bottom,20)
+        
+        
         
         Button {
             if isFormValid {

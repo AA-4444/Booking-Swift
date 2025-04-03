@@ -8,6 +8,7 @@
 import SwiftUI
 import GoogleSignIn
 import FirebaseAuth
+import RiveRuntime
 
 struct DeviceHelper {
     static let screenHeight = UIScreen.main.bounds.height
@@ -52,6 +53,7 @@ struct LoginEmail: View {
     @FocusState private var isEmailFocused: Bool
     @FocusState private var isPasswordFocused: Bool
     @Binding var path: NavigationPath
+    let testbutton = RiveViewModel(fileName: "testbutton", autoPlay: false)
     
     var body: some View {
         VStack {
@@ -203,30 +205,30 @@ struct LoginEmail: View {
                 Button {
                     // Placeholder for Login action
                 } label: {
-                    Text("Login")
-                        .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
-                            small: 22,
+                   Text("Login")
+                      .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
+                           small: 22,
                             medium: 22,
                             pro: 22,
                             proMax: 22
                         )))
                         .foregroundColor(.white)
                         .frame(width: DeviceHelper.adaptivePadding(
-                            small: 250,
-                            medium: 278,
-                            pro: 278,
-                            proMax: 278
+                          small: 300,
+                           medium: 320,
+                           pro: 320,
+                           proMax: 320
                         ), height: DeviceHelper.adaptivePadding(
-                            small: 50,
-                            medium: 63,
-                            pro: 63,
-                            proMax: 63
-                        ))
+                            small: 63,
+                            medium: 68,
+                            pro: 68,
+                            proMax: 68
+                    ))
                 }
                 .background(Color("Color2"))
-                .cornerRadius(10)
-                .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 6)
-                .padding(.top, 20)
+                .cornerRadius(15)
+                  .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 6)
+                  .padding(.top,20)
                 
                 Spacer().frame(height: DeviceHelper.adaptivePadding(
                     small: 10,

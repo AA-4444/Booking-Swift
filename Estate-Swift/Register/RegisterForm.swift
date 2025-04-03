@@ -9,7 +9,7 @@
 import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
-
+import RiveRuntime
 
 
 struct RegisterForm: View {
@@ -27,7 +27,7 @@ struct RegisterForm: View {
     @Binding var path: NavigationPath
     @State private var errorMessage: String?
     @State private var showSuccessMessage: Bool = false
-   
+    let testbutton = RiveViewModel(fileName: "testbutton", autoPlay: false)
     
     // Password  properties
     private var passwordStrength: Double {
@@ -346,34 +346,32 @@ struct RegisterForm: View {
                   
                 }
                 
-                //login button
+                //Register button
                 Button {
                     registerUser()
                 } label: {
                     Text("Register")
-                        .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
-                            small: 22,
+                      .font(.custom("Lato-Black", size: DeviceHelper.adaptivePadding(
+                           small: 22,
                             medium: 22,
                             pro: 22,
                             proMax: 22
                         )))
                         .foregroundColor(.white)
                         .frame(width: DeviceHelper.adaptivePadding(
-                            small: 250,
-                            medium: 278,
-                            pro: 278,
-                            proMax: 278
-                        ),height: DeviceHelper.adaptivePadding(
-                            small: 50,
-                            medium: 63,
-                            pro: 63,
-                            proMax: 63
-                        ))
-                    
+                          small: 300,
+                           medium: 320,
+                           pro: 318,
+                           proMax: 360
+                        ), height: DeviceHelper.adaptivePadding(
+                            small: 55,
+                            medium: 68,
+                            pro: 68,
+                            proMax: 68
+                    ))
                 }
                 .background(Color("Color2"))
-                
-                .cornerRadius(10)
+                .cornerRadius(15)
                 .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 6)
                 .padding(.top,20)
                 
