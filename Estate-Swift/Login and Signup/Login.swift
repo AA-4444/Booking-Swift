@@ -116,7 +116,7 @@ struct Login: View {
                         Image("google")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 30, height: 30)
+                            .frame(width: 35, height: 35)
                             .padding()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
@@ -142,8 +142,9 @@ struct Login: View {
                     }) {
                         Image(systemName: "apple.logo")
                             .resizable()
+                            .foregroundColor(.white)
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
+                            .frame(width: 33, height: 33)
                             .foregroundColor(.black)
                             .padding()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -159,7 +160,7 @@ struct Login: View {
                         pro: 70,
                         proMax: 70
                     ))
-                    .background(Color.white)
+                    .background(Color.black)
                     .cornerRadius(25)
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                 }

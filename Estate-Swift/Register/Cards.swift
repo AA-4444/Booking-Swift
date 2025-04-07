@@ -33,8 +33,16 @@ struct Cards: View {
     @State private var showCardList: Bool = false
     @State private var cards: [CardInfo] = [] // Store multiple cards
     @State private var editingCard: CardInfo? // Track the card being edited
+    
     let testbutton = RiveViewModel(fileName: "testbutton", autoPlay: false)
     
+    let reloadIcon = RiveViewModel(
+    fileName: "black_icons",
+    stateMachineName: "RELOAD_Interactivity",
+    autoPlay: false, artboardName: "REFRESH/RELOAD"
+    )
+    
+   
     var body: some View {
     
             VStack {
@@ -53,8 +61,23 @@ struct Cards: View {
 
                     Spacer(minLength: 0)
                     
-                    Button {
-                        activeTF = .cardNumber
+                   
+                    
+                    ZStack {
+                      
+                        Color.white
+                            .frame(width: 54, height: 54)
+                            .cornerRadius(25)
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
+
+                    
+                        reloadIcon.view()
+                            .frame(width: 38, height: 38)
+                    }
+                    .onTapGesture {
+                        reloadIcon.setInput("active", value: true)
+                        print("Reload button tapped")
+                        activeTF = nil
                         cardNumber = ""
                         expireDate = ""
                         cvvCode = ""
@@ -63,18 +86,14 @@ struct Cards: View {
                         isCardAdded = false
                         editingCard = nil
                         showCardList = false
-                    } label: {
-                        Image(systemName: "arrow.counterclockwise")
-                            .font(.title2)
-                            .foregroundColor(.black)
-                            .frame(width: 54, height: 54)
-                            .background(Color.white)
-                            .cornerRadius(25)
-                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                 reloadIcon.setInput("active", value: false)
+                            }
                     }
+                    
                 }
                 
-              //  Spacer().frame(height: -20)
+           
                 
                 //MARK: Card List
                 CardInputView()

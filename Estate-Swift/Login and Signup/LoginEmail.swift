@@ -57,13 +57,13 @@ struct LoginEmail: View {
     
     var body: some View {
         VStack {
-            Image("Image-0")
+            Image("Image-01")
                 .resizable()
                 .frame(maxWidth: .infinity, maxHeight: DeviceHelper.adaptivePadding(
-                    small: 170,
-                    medium: 210,
-                    pro: 210,
-                    proMax: 238
+                    small: 300,
+                    medium: 500,
+                    pro: 500,
+                    proMax: 500
                 ))
                 .edgesIgnoringSafeArea(.all)
             
@@ -88,7 +88,12 @@ struct LoginEmail: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
-            .padding(.top, 20)
+            .padding(.top,DeviceHelper.adaptivePadding(
+                small: 10,
+                medium: 20,
+                pro: 20,
+                proMax: 20
+            ))
             
             VStack {
                 // Forms for Email/Pass
@@ -231,10 +236,10 @@ struct LoginEmail: View {
                   .padding(.top,20)
                 
                 Spacer().frame(height: DeviceHelper.adaptivePadding(
-                    small: 10,
+                    small: 5,
                     medium: 140,
-                    pro: 90,
-                    proMax: 120
+                    pro: 40,
+                    proMax: 70
                 ))
                 
                 VStack {
@@ -273,7 +278,7 @@ struct LoginEmail: View {
                             Image("google")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
+                                .frame(width: 35, height: 35)
                         }
                         .frame(width: DeviceHelper.adaptivePadding(
                             small: 140,
@@ -296,8 +301,9 @@ struct LoginEmail: View {
                         }) {
                             Image(systemName: "apple.logo")
                                 .resizable()
+                                .foregroundColor(.white)
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 25, height: 25)
+                                .frame(width: 33, height: 33)
                                 .foregroundColor(.black)
                         }
                         .frame(width: DeviceHelper.adaptivePadding(
@@ -311,7 +317,7 @@ struct LoginEmail: View {
                             pro: 70,
                             proMax: 70
                         ))
-                        .background(Color.white)
+                        .background(Color.black)
                         .cornerRadius(25)
                         .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                     }

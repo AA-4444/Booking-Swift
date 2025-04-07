@@ -19,11 +19,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
         FirebaseApp.configure()
         
-        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-            if let user = user {
-                print("Google user restored: \(user.profile?.name ?? "")")
-            }
-        }
+      //  GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+      //      if let user = user {
+        //        print("Google user restored: \(user.profile?.name ?? "")")
+        //    }
+       // }
         return true
     }
     
@@ -47,7 +47,7 @@ struct Estate_SwiftApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $path) {
-                OnboardingView(show: .constant(false), path: $path)
+                OnboardingScreen(path: $path)
                     .onAppear {
                         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
                             if let user {
@@ -58,7 +58,7 @@ struct Estate_SwiftApp: App {
                     .navigationDestination(for: AppRoute.self) { route in
                         switch route {
                         case .onboardingview:
-                            OnboardingView(show: .constant(false), path: $path)
+                                OnboardingScreen(path: $path)
                         case .login:
                             Login(user: $user, path: $path)
                         case .register:
