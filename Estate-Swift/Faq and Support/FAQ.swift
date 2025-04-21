@@ -77,7 +77,7 @@ struct FAQ: View {
                     .foregroundColor(Color.white)
                     .font(.system(size: 20, weight: .regular))
                     .background(
-                        Color.black
+                        Color("Color2")
                             .cornerRadius(50)
                             .frame(width: 40,height: 40)
                     )
@@ -112,7 +112,7 @@ struct FAQ: View {
                     .foregroundColor(Color.white)
                     .font(.system(size: 15, weight: .regular))
                     .background(
-                        Color.black
+                        Color("Color2")
                             .cornerRadius(50)
                             .frame(width: 40,height: 40)
                     )
@@ -147,7 +147,7 @@ struct FAQ: View {
                     .foregroundColor(Color.white)
                     .font(.system(size: 20, weight: .regular))
                     .background(
-                        Color.black
+                        Color("Color2")
                             .cornerRadius(50)
                             .frame(width: 40,height: 40)
                     )
@@ -239,7 +239,7 @@ struct FAQ: View {
                                                                          }
                                       } label: {
                                           Image(systemName: expandedQuestion == "BuyerQuestion1" ? "minus" : "plus")
-                                              .foregroundColor(Color("Color1"))
+                                              .foregroundColor(Color("Color2"))
                                               .font(.system(size: 20))
                                       }
                                   }
@@ -272,7 +272,7 @@ struct FAQ: View {
                                                                           }
                                       } label: {
                                           Image(systemName: expandedQuestion == "BuyerQuestion2" ? "minus" : "plus")
-                                              .foregroundColor(Color("Color1"))
+                                              .foregroundColor(Color("Color2"))
                                               .font(.system(size: 20))
                                       }
                                       

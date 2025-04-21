@@ -238,12 +238,14 @@ struct Cards: View {
                                 activeTF = .cvv
                             case .cvv:
                                 activeTF = .cardHolderName
+                                    path.append(AppRoute.main)
                             default:
                                 break
                             }
                         } else {
                             // Setup Later action (dismiss keyboard)
                             activeTF = nil
+                            path.append(AppRoute.main)
                         }
                     }) {
                         Text(isCardAdded ? "Next" : "Setup Later")

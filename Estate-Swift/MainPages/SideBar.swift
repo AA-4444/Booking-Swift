@@ -21,8 +21,8 @@ struct SideBar: View {
                     .background(.white.opacity(0.2))
                     .mask(Circle())
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Meng To")
-                    Text("UI Designer")
+                    Text("Test User")
+                    Text("User")
                         .font(.subheadline)
                         .opacity(0.7)
                 }

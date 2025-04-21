@@ -71,6 +71,8 @@ struct Estate_SwiftApp: App {
                             Setup(path: $path)
                         case .cards:
                         Cards(path: $path)
+                            case .main:
+                                ContentView(user: $user,path: $path)
                         }
                     }
             }
