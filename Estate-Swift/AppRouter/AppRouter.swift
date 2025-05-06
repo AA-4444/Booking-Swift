@@ -16,4 +16,5 @@ enum AppRoute: Hashable {
     case setup
     case cards
     case main
+    case settings
 }

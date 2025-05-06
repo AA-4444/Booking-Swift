@@ -123,7 +123,6 @@ struct Home: View {
             
             
             
-            
             // Recommended For You Section
             HStack {
                 Text("Recommended For You")

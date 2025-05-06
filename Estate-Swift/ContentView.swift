@@ -27,65 +27,83 @@ import GoogleSignIn
 
 import SwiftUI
 import RiveRuntime
+import GoogleSignIn
 
 struct ContentView: View {
     @Binding var user: User?
     @Binding var path: NavigationPath
     @State private var showOnboarding = false
     @State private var isSideBarOpen = false
+    @AppStorage("selectedTab") var selectedTab: NabTab = .home
     var menuButton = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
+    
+    let SettingsIcon = RiveViewModel(
+        fileName: "black_icons",
+        stateMachineName: "SETTINGS_Interactivity",
+        autoPlay: false,
+        artboardName: "SETTINGS"
+    )
     
     var body: some View {
         ZStack {
-            // Background color
-            
-            
-            // SideBar (similar to SideMenu in the example)
+            // Sidebar
             SideBar()
                 .padding(.top, 50)
                 .opacity(isSideBarOpen ? 1 : 0)
                 .offset(x: isSideBarOpen ? 0 : -300)
                 .rotation3DEffect(.degrees(isSideBarOpen ? 0 : 30), axis: (x: 0, y: 1, z: 0))
-            
                 .ignoresSafeArea(.all, edges: .top)
             
-            
-            
-            // Main content (Home view)
-            Home()
-                .safeAreaInset(edge: .bottom) {
-                    Color.clear.frame(height: 80)
+            //MARK: View based on selected tab...
+            Group {
+                switch selectedTab {
+                case .home:
+                    Home()
+                case .search:
+                    Text("Search View")
+                case .star:
+                    Text("Favorites View")
+                case .user:
+                    UserPage()
                 }
-                .safeAreaInset(edge: .top) {
-                    Color.clear.frame(height: 112)
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: 80)
+            }
+            .safeAreaInset(edge: .top) {
+                Color.clear.frame(height: 112)
+            }
+            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .rotation3DEffect(.degrees(isSideBarOpen ? 30 : 0), axis: (x: 0, y: -1, z: 0), perspective: 1)
+            .offset(x: isSideBarOpen ? 265 : 0)
+            .scaleEffect(isSideBarOpen ? 0.9 : 1)
+            .scaleEffect(showOnboarding ? 0.92 : 1)
+            .ignoresSafeArea()
+            .navigationDestination(for: AppRoute.self) { route in
+                switch route {
+                    case .settings:
+                        SettingsView(path: $path)
+                    default:
+                        EmptyView()
                 }
-                .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                .rotation3DEffect(.degrees(isSideBarOpen ? 30 : 0), axis: (x: 0, y: -1, z: 0), perspective: 1)
-                .offset(x: isSideBarOpen ? 265 : 0)
-                .scaleEffect(isSideBarOpen ? 0.9 : 1)
-                .scaleEffect(showOnboarding ? 0.92 : 1)
-                .ignoresSafeArea()
-                
+            }
             
-            
-            // NavBar (similar to TabBar in the example)
+            // NavBar
             NavBar()
                 .offset(y: -24)
-               
                 .ignoresSafeArea()
                 .offset(y: isSideBarOpen ? 300 : 0)
                 .offset(y: showOnboarding ? 200 : 0)
             
-            // Menu button with Rive animation
+            // Menu button
             menuButton.view()
                 .frame(width: 44, height: 44)
                 .background(
-                        Circle()
-                            .fill(Color.white) // Background circle color
-                            .frame(width: 50, height: 50) // Larger circle size
-                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
-                    )
-                
+                    Circle()
+                        .fill(Color.white)
+                        .frame(width: 50, height: 50)
+                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                )
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .padding()
                 .offset(x: isSideBarOpen ? 216 : 0)
@@ -104,25 +122,29 @@ struct ContentView: View {
                 }
                 .offset(y: -15)
             
-            // Profile button to show OnboardingScreen
-            Image(systemName: "person")
-                .frame(width: 40, height: 40)
+          // Settings button
+            SettingsIcon.view()
+                .frame(width: 38, height: 38)
+                .onTapGesture {
+                    path.append(AppRoute.settings)
+                    SettingsIcon.setInput("active", value: true)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        SettingsIcon.setInput("active", value: false)
+                    }
+                }
                 .background(
-                        Circle()
-                            .fill(Color.white) // Background circle color
-                            .frame(width: 50, height: 50) // Larger circle size
-                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
-                    )
-                
+                    Circle()
+                        .fill(Color.white)
+                        .frame(width: 50, height: 50)
+                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                )
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                
                 .padding()
                 .offset(y: 4)
                 .offset(x: isSideBarOpen ? 100 : 0)
                 .offset(y: -15)
-                .onTapGesture {
-                    
-                }
+              
+                
             
             // OnboardingScreen with transition
             if showOnboarding {
@@ -145,3 +167,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(user: .constant(User(name: "Test User")), path: .constant(NavigationPath()))
     }
 }
+
