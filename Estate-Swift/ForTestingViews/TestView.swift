@@ -19,6 +19,7 @@ struct TestView: View {
                 .background(Color.red.opacity(0.1))
                 .cornerRadius(10)
                 .padding(.horizontal)
+        
         }
     }
 }

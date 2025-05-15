@@ -75,6 +75,7 @@ struct Estate_SwiftApp: App {
                                 ContentView(user: $user,path: $path)
                         case .settings:
                                 SettingsView(path: $path)
+                       
                         }
                     }
             }

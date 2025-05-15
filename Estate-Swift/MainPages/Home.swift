@@ -18,8 +18,9 @@ struct Home: View {
           //  Text("Browse property")
             //    .font(.custom("Lato-Black", size: 25))
               //  .foregroundColor(Color("Color2"))
-               // .frame(maxWidth: .infinity, alignment: .leading)
+                //.frame(maxWidth: .infinity, alignment: .center)
                 //.padding(.horizontal)
+                //.padding(.bottom,10)
             
             // Search bar
             HStack {
@@ -155,6 +156,7 @@ struct Home: View {
         }
             }
             .background(Color.white)
+            .offset(y: 60)
         }
     }
 

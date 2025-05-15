@@ -19,6 +19,9 @@ struct SettingsView: View {
                         sectionHeader("PAYMENT INFO")
                         sectionRow(icon: "creditcard", title: "Rewards & Wallet")
                         sectionRow(icon: "creditcard.fill", title: "Payment methods")
+                        //    .onTapGesture {
+                                
+                        //    }
                         
                         // Manage Account Section..
                         sectionHeader("MANAGE ACCOUNT")
@@ -35,6 +38,11 @@ struct SettingsView: View {
                         // Travel Activity Section..
                         sectionHeader("TRAVEL ACTIVITY")
                         sectionRow(icon: "heart", title: "Saved lists")
+                        
+                        // Payment Info Section..
+                        sectionHeader("SUPPORT")
+                        sectionRow(icon: "bubble.left.and.bubble.right", title: "FAQ")
+                        sectionRow(icon: "tray.full.fill", title: "Most recent questions")
                         
                     }
                     Spacer()
@@ -80,7 +88,7 @@ struct SettingsView: View {
         }
         .padding()
         .background(Color.white)
-        .cornerRadius(10)
+        .cornerRadius(15)
         .padding(.horizontal)
         .padding(.vertical, 2)
     }

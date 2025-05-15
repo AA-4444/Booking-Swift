@@ -24,16 +24,7 @@ struct UserPage: View {
               
                 VStack(spacing: 16) {
                     // Profile and Settings Header
-                    HStack() {
-                        Text("Profile")
-                            .font(.custom("Lato-Black", size: 24))
-                            .foregroundColor(.black)
-                        
-                       
-                    }
-                    .padding(.horizontal)
-                    .frame(maxWidth: .infinity,alignment: .center)
-                    .padding(.top, 50)
+                    
                     
                     //MARK:  Profile Image
                     ZStack {
@@ -58,6 +49,8 @@ struct UserPage: View {
                     .sheet(isPresented: $showingImagePicker) {
                         Text("Image Picker Placeholder")
                     }
+                    .padding(.top,80)
+                    
                     
                    
                     Text("Alex Zarytskyi")
@@ -72,7 +65,7 @@ struct UserPage: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 60)
                 }
-                .padding(.vertical, 20)
+                .padding(.vertical, 30)
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .shadow(color: Color.black.opacity(0.15), radius: 8, x: 0, y: 4)
@@ -132,6 +125,7 @@ struct UserPage: View {
                     }
                 }
             }
+            
         
         .background(Color.gray.opacity(0.1))
         .ignoresSafeArea(.all, edges: .top) //top edge

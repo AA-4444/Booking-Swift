@@ -5,26 +5,6 @@
 //  Created by Алексей Зарицький on 3/23/25.
 //
 
-import GoogleSignIn
-
-
-// struct ContentView: View {
-    //@Binding var user: User?
-  //  var body: some View {
-      //  if let user {
-        //    Text("Hello there, \(user.name)")
-          //  Button {
-            //    GIDSignIn.sharedInstance.signOut()
-              //  self.user = nil
-            //} label: {
-              //  Text("Log out")
-            //}
-        //} else {
-         //   Login(user: self.$user ,path: .constant(NavigationPath()))
-        //}
-   // }
-//}
-
 import SwiftUI
 import RiveRuntime
 import GoogleSignIn
@@ -44,34 +24,32 @@ struct ContentView: View {
         artboardName: "SETTINGS"
     )
     
+    private func titleForSelectedTab() -> String {
+        switch selectedTab {
+        case .home: return "Home"
+        case .search: return "Book"
+        case .star: return "Favorites"
+        case .user: return "User"
+        }
+    }
+    
     var body: some View {
         ZStack {
-            // Sidebar
-            SideBar()
-                .padding(.top, 50)
-                .opacity(isSideBarOpen ? 1 : 0)
-                .offset(x: isSideBarOpen ? 0 : -300)
-                .rotation3DEffect(.degrees(isSideBarOpen ? 0 : 30), axis: (x: 0, y: 1, z: 0))
-                .ignoresSafeArea(.all, edges: .top)
-            
-            //MARK: View based on selected tab...
+            // MARK: View based on selected tab
             Group {
                 switch selectedTab {
                 case .home:
                     Home()
                 case .search:
-                    Text("Search View")
+                    Book()
                 case .star:
-                    Text("Favorites View")
+                   Favorites()
                 case .user:
                     UserPage()
                 }
             }
-            .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: 80)
-            }
             .safeAreaInset(edge: .top) {
-                Color.clear.frame(height: 112)
+                Color.clear.frame(height: 50)
             }
             .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .rotation3DEffect(.degrees(isSideBarOpen ? 30 : 0), axis: (x: 0, y: -1, z: 0), perspective: 1)
@@ -81,10 +59,10 @@ struct ContentView: View {
             .ignoresSafeArea()
             .navigationDestination(for: AppRoute.self) { route in
                 switch route {
-                    case .settings:
-                        SettingsView(path: $path)
-                    default:
-                        EmptyView()
+                case .settings:
+                    SettingsView(path: $path)
+                default:
+                    EmptyView()
                 }
             }
             
@@ -95,56 +73,34 @@ struct ContentView: View {
                 .offset(y: isSideBarOpen ? 300 : 0)
                 .offset(y: showOnboarding ? 200 : 0)
             
-            // Menu button
-            menuButton.view()
-                .frame(width: 44, height: 44)
-                .background(
-                    Circle()
-                        .fill(Color.white)
-                        .frame(width: 50, height: 50)
-                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
-                )
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding()
-                .offset(x: isSideBarOpen ? 216 : 0)
-                .onTapGesture {
-                    menuButton.setInput("isOpen", value: isSideBarOpen)
-                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
-                        isSideBarOpen.toggle()
-                    }
-                }
-                .onChange(of: isSideBarOpen) { newValue in
-                    if newValue {
-                        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
-                    } else {
-                        UIApplication.shared.setStatusBarStyle(.darkContent, animated: true)
-                    }
-                }
-                .offset(y: -15)
-            
-          // Settings button
-            SettingsIcon.view()
-                .frame(width: 38, height: 38)
-                .onTapGesture {
-                    path.append(AppRoute.settings)
-                    SettingsIcon.setInput("active", value: true)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        SettingsIcon.setInput("active", value: false)
-                    }
-                }
-                .background(
-                    Circle()
-                        .fill(Color.white)
-                        .frame(width: 50, height: 50)
-                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
-                )
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                .padding()
-                .offset(y: 4)
-                .offset(x: isSideBarOpen ? 100 : 0)
-                .offset(y: -15)
-              
+            // Settings button with dynamic title
+            HStack(spacing: -25) {
+                Text(titleForSelectedTab())
+                    .font(.custom("Lato-Black", size: 25))
+                    .foregroundColor(Color.black)
+                    .frame(maxWidth: .infinity, alignment: .center)
                 
+                SettingsIcon.view()
+                    .frame(width: 38, height: 38)
+                    .onTapGesture {
+                        path.append(AppRoute.settings)
+                        SettingsIcon.setInput("active", value: true)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            SettingsIcon.setInput("active", value: false)
+                        }
+                    }
+                    .background(
+                        Circle()
+                            .fill(Color.white)
+                            .frame(width: 50, height: 50)
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                    )
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .padding()
+            .offset(y: -17)
+            .offset(x: isSideBarOpen ? 100 : 0)
+            .zIndex(1) // Ensure it stays above other views
             
             // OnboardingScreen with transition
             if showOnboarding {
@@ -154,7 +110,7 @@ struct ContentView: View {
                     .shadow(color: .black.opacity(0.5), radius: 40, x: 0, y: 40)
                     .ignoresSafeArea(.all, edges: .top)
                     .offset(y: showOnboarding ? -10 : 0)
-                    .zIndex(1)
+                    .zIndex(2) // Onboarding screen should be above everything
                     .transition(.move(edge: .top))
             }
         }
@@ -167,4 +123,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(user: .constant(User(name: "Test User")), path: .constant(NavigationPath()))
     }
 }
-

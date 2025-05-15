@@ -15,6 +15,7 @@ struct SideBar: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            // User header
             HStack {
                 Image(systemName: "person")
                     .padding(12)
@@ -49,8 +50,6 @@ struct SideBar: View {
             history
             
             Spacer()
-            
-          
         }
         .foregroundColor(.white)
         .frame(maxWidth: 288, maxHeight: .infinity)
@@ -68,28 +67,48 @@ struct SideBar: View {
                     .opacity(0.1)
                     .padding(.horizontal, 16)
                 
-                HStack(spacing: 14) {
-                    item.icon.view()
-                        .frame(width: 32, height: 32)
-                        .opacity(0.6)
-                    Text(item.text)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(12)
-                .background(
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(.blue)
-                        .frame(maxWidth: selectedMenu == item.menu ? .infinity : 0)
+                if item.menu == .help {
+                    
+                    NavigationLink(destination: FAQ()) {
+                        HStack(spacing: 14) {
+                            item.icon.view()
+                                .frame(width: 32, height: 32)
+                                .opacity(0.6)
+                            Text(item.text)
+                        }
                         .frame(maxWidth: .infinity, alignment: .leading)
-                )
-                .background(Color("Color2"))
-                .onTapGesture {
-                    withAnimation(.timingCurve(0.2, 0.8, 0.2, 1)) {
-                        selectedMenu = item.menu
+                        .padding(12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(Color.blue)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        )
+                        .background(Color("Color2"))
                     }
-                    item.icon.setInput("active", value: true)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        item.icon.setInput("active", value: false)
+                } else {
+                   
+                    HStack(spacing: 14) {
+                        item.icon.view()
+                            .frame(width: 32, height: 32)
+                            .opacity(0.6)
+                        Text(item.text)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(selectedMenu == item.menu ? Color.blue : Color.clear)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    )
+                    .background(Color("Color2"))
+                    .onTapGesture {
+                        withAnimation(.timingCurve(0.2, 0.8, 0.2, 1)) {
+                            selectedMenu = item.menu
+                        }
+                        item.icon.setInput("active", value: true)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            item.icon.setInput("active", value: false)
+                        }
                     }
                 }
             }
@@ -117,8 +136,7 @@ struct SideBar: View {
                 .padding(12)
                 .background(
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(.blue)
-                        .frame(maxWidth: selectedMenu == item.menu ? .infinity : 0)
+                        .fill(selectedMenu == item.menu ? Color.blue : Color.clear)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 )
                 .background(Color("Color2"))
@@ -128,7 +146,7 @@ struct SideBar: View {
                     }
                     item.icon.setInput("active", value: true)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    item.icon.setInput("active", value: false)
+                        item.icon.setInput("active", value: false)
                     }
                 }
             }
@@ -139,11 +157,18 @@ struct SideBar: View {
     }
 }
 
+
+
+// Previews wrapped in NavigationView so that NavigationLink works as expected.
 struct SideBar_Previews: PreviewProvider {
     static var previews: some View {
-        SideBar()
+        NavigationView {
+            SideBar()
+        }
     }
 }
+
+// MARK: - Menu Data
 
 struct MenuItem: Identifiable {
     var id = UUID()
@@ -153,18 +178,29 @@ struct MenuItem: Identifiable {
 }
 
 var menuItems = [
-    MenuItem(text: "Home", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .home),
-    MenuItem(text: "Search", icon: RiveViewModel(fileName: "icons", stateMachineName: "SEARCH_Interactivity", artboardName: "SEARCH"), menu: .search),
-    MenuItem(text: "Favorites", icon: RiveViewModel(fileName: "icons", stateMachineName: "STAR_Interactivity", artboardName: "LIKE/STAR"), menu: .favorites),
-    MenuItem(text: "Support", icon: RiveViewModel(fileName: "icons", stateMachineName: "CHAT_Interactivity", artboardName: "CHAT"), menu: .help)
+    MenuItem(text: "Home",
+             icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"),
+             menu: .home),
+    MenuItem(text: "Search",
+             icon: RiveViewModel(fileName: "icons", stateMachineName: "SEARCH_Interactivity", artboardName: "SEARCH"),
+             menu: .search),
+    MenuItem(text: "Favorites",
+             icon: RiveViewModel(fileName: "icons", stateMachineName: "STAR_Interactivity", artboardName: "LIKE/STAR"),
+             menu: .favorites),
+    // "Support" maps to .help. When tapped, this navigates to FAQView.
+    MenuItem(text: "Support",
+             icon: RiveViewModel(fileName: "icons", stateMachineName: "CHAT_Interactivity", artboardName: "CHAT"),
+             menu: .help)
 ]
 
 var menuItems2 = [
-    MenuItem(text: "History", icon: RiveViewModel(fileName: "icons", stateMachineName: "TIMER_Interactivity", artboardName: "TIMER"), menu: .history),
-    MenuItem(text: "Notifications", icon: RiveViewModel(fileName: "icons", stateMachineName: "BELL_Interactivity", artboardName: "BELL"), menu: .notifications)
+    MenuItem(text: "History",
+             icon: RiveViewModel(fileName: "icons", stateMachineName: "TIMER_Interactivity", artboardName: "TIMER"),
+             menu: .history),
+    MenuItem(text: "Notifications",
+             icon: RiveViewModel(fileName: "icons", stateMachineName: "BELL_Interactivity", artboardName: "BELL"),
+             menu: .notifications)
 ]
-
-
 
 enum SelectedMenu: String {
     case home

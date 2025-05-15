@@ -11,79 +11,88 @@ struct OnboardingScreen: View {
     @State private var isAnimating = false
     @State private var showContinueText = false
     @Binding var path: NavigationPath
-    
-    // Function to calculate dynamic font size based on screen width
-    func dynamicFontSize(for text: String, screenWidth: CGFloat) -> CGFloat {
+
+    /// Function to calculate dynamic font size based on screen width,
+    /// taking into account a given side padding.
+    func dynamicFontSize(for text: String, screenWidth: CGFloat, sidePadding: CGFloat = 20) -> CGFloat {
+        let availableWidth = screenWidth - (sidePadding * 2)
         let baseFontSize: CGFloat = 120
         let textWidth = text.widthOfString(usingFont: .systemFont(ofSize: baseFontSize))
-        let scaleFactor = screenWidth / textWidth
-        let adjustedFontSize = baseFontSize * min(scaleFactor, 1.0) // Avoid scaling up too much
+        let scaleFactor = availableWidth / textWidth
+        // Ensures the font doesn't scale above the base size
+        let adjustedFontSize = baseFontSize * min(scaleFactor, 1.0)
         return adjustedFontSize
     }
-    
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 // Background with custom Color2
                 Color("Color2")
                     .ignoresSafeArea()
-                
+
                 VStack(spacing: 10) {
                     Spacer() // Push content to the bottom
-                    
-                    // Main title with splash animation, full width, aligned at bottom
+
+                    // Main title with splash animation
                     VStack(spacing: 0) {
                         Text("VEST")
                             .font(.custom("Lato-Black", size: dynamicFontSize(for: "VEST", screenWidth: geometry.size.width)))
+                            .lineLimit(1)                        // Prevent wrapping
+                            .minimumScaleFactor(0.5)              // Allow text to shrink if needed
                             .foregroundColor(.white)
-                            .scaleEffect(isAnimating ? 1.0 : 0.1) // Scale from small to full size
-                            .rotationEffect(.degrees(isAnimating ? 0 : 360)) // Rotate 360 degrees
-                            .opacity(isAnimating ? 1.0 : 0.0) // Fade in
+                            .scaleEffect(isAnimating ? 1.0 : 0.1)   // Scale from small to full size
+                            .rotationEffect(.degrees(isAnimating ? 0 : 360))  // Rotate 360 degrees
+                            .opacity(isAnimating ? 1.0 : 0.0)        // Fade in
                             .animation(
                                 .spring(response: 0.7, dampingFraction: 0.5, blendDuration: 0)
-                                .delay(0.3), // Delay for the first text
+                                    .delay(0.3),                  // Delay for the first text
                                 value: isAnimating
                             )
-                            .frame(maxWidth: .infinity, alignment: .leading) // Full width, centered
-                        
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
                         Text("ESTATE")
                             .font(.custom("Lato-Black", size: dynamicFontSize(for: "ESTATE", screenWidth: geometry.size.width)))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
                             .foregroundColor(.white)
-                            .scaleEffect(isAnimating ? 1.0 : 0.1) // Scale from small to full size
-                            .rotationEffect(.degrees(isAnimating ? 0 : -360)) // Rotate in opposite direction
-                            .opacity(isAnimating ? 1.0 : 0.0) // Fade in
+                            .scaleEffect(isAnimating ? 1.0 : 0.1)
+                            .rotationEffect(.degrees(isAnimating ? 0 : -360)) // Rotate in the opposite direction
+                            .opacity(isAnimating ? 1.0 : 0.0)
                             .animation(
                                 .spring(response: 0.7, dampingFraction: 0.5, blendDuration: 0)
-                                .delay(0.6), // Delay for the second text
+                                    .delay(0.6), // Delay for the second text
                                 value: isAnimating
                             )
-                            .frame(maxWidth: .infinity, alignment: .leading) // Full width, centered
-                        
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
                         Text("Agency")
                             .font(.custom("Lato-Black", size: dynamicFontSize(for: "Agency", screenWidth: geometry.size.width)))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
                             .foregroundColor(.white)
-                            .scaleEffect(isAnimating ? 1.0 : 0.1) // Scale from small to full size
-                            .rotationEffect(.degrees(isAnimating ? 0 : 360)) // Rotate 360 degrees
-                            .opacity(isAnimating ? 1.0 : 0.0) // Fade in
+                            .scaleEffect(isAnimating ? 1.0 : 0.1)
+                            .rotationEffect(.degrees(isAnimating ? 0 : 360))
+                            .opacity(isAnimating ? 1.0 : 0.0)
                             .animation(
                                 .spring(response: 0.7, dampingFraction: 0.5, blendDuration: 0)
-                                .delay(0.9), // Delay for the third text
+                                    .delay(0.9), // Delay for the third text
                                 value: isAnimating
                             )
-                            .frame(maxWidth: .infinity, alignment: .leading) // Align to the left if it doesn't fit full width
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    
+
                     // Tap to continue text with fade-in animation
                     Text("Tap on screen to continue")
                         .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(.white.opacity(showContinueText ? 0.8 : 0.0))
+                        .foregroundColor(Color.white.opacity(showContinueText ? 0.8 : 0.0))
                         .opacity(showContinueText ? 1.0 : 0.0)
                         .animation(
                             .easeInOut(duration: 1.0)
-                            .delay(1.5), // Delay to appear after main text animation
+                                .delay(1.5),  // Delay to appear after main text animation
                             value: showContinueText
                         )
-                        .padding(.top,15)
+                        .padding(.top, 15)
                         .padding(.bottom, 30) // Adjusted padding for bottom alignment
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
@@ -94,7 +103,7 @@ struct OnboardingScreen: View {
                 showContinueText = true
             }
             .onTapGesture {
-                // Add your tap action here
+                // Tap action: Navigate to the login route
                 path.append(AppRoute.login)
             }
         }

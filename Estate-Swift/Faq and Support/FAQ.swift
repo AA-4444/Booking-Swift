@@ -11,6 +11,7 @@ struct FAQ: View {
     @State private var searchText: String = ""
     @State private var selectedOption: String = "Buyer"
     @State private var expandedQuestion: String? = nil
+    
 
         let options = ["Buyer", "Estate Agent"]
     
@@ -361,6 +362,8 @@ struct FAQ: View {
                       }
                       .padding(.top, 20)
         }
+       // .navigationBarBackButtonHidden(true)
+
     }
 }
 
