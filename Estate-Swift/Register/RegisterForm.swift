@@ -380,18 +380,25 @@ struct RegisterForm: View {
             // Warning Overlay
             if showEmailTakenWarning {
                 VStack {
-                    Text("Email is already taken")
-                        .font(.custom("Lato-Regular", size: 14))
-                        .foregroundColor(.red)
-                        .padding(.horizontal)
-                        .padding(.vertical, 15)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.red.opacity(0.1))
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
+                    HStack {
+                        Text("Email is alredy taken")
+                            .font(.custom("Lato-Regular", size: 18))
+                            .foregroundColor(.red)
+                           
+                            
+                        
+                        Image(systemName: "exclamationmark.circle", variableValue: 1.00)
+                            
+                            .foregroundColor(Color.red)
+                            .font(.system(size: 25, weight: .regular))
+                           
+                    }
+                    .padding(.horizontal,25)
+                    .padding(.vertical, 25)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .background(Color.white)
+                .cornerRadius(15)
+                .shadow(color: .gray,radius: 10, x: 0, y: 5)          .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 .background(Color.black.opacity(0.3))
                 .onTapGesture {
                     withAnimation {
