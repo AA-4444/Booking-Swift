@@ -10,9 +10,25 @@ import SwiftUI
 struct SettingsView: View {
     @Binding var path: NavigationPath
     var body: some View {
-        NavigationView {
+       
            
                 VStack(spacing: 0) {
+                    Button(action: {
+                                      // Pop the last view in the path stack
+                                      if !path.isEmpty {
+                                          path.removeLast()
+                                      }
+                                  }) {
+                                      Image(systemName: "chevron.left")
+                                          .foregroundColor(.black)
+                                          .font(.system(size: 20, weight: .medium))
+                                          .frame(width: 50, height: 50)
+                                          .background(Color.white)
+                                          .clipShape(Circle())
+                                          .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+                                  }
+                                  .frame(maxWidth: .infinity,alignment: .leading)
+                                  .padding(.horizontal)
                  
                     ScrollView(showsIndicators: false){
                         // Payment Info Section..
@@ -32,8 +48,18 @@ struct SettingsView: View {
                         // Preferences Section..
                         sectionHeader("PREFERENCES")
                         sectionRow(icon: "gearshape", title: "Device preferences")
+                            .onTapGesture {
+                        path.append(AppRoute.devicepref)
+                           }
+
                         sectionRow(icon: "slider.horizontal.3", title: "Travel preferences")
+                            .onTapGesture {
+                        path.append(AppRoute.travelpref)
+                           }
                         sectionRow(icon: "envelope", title: "Email preferences")
+                            .onTapGesture {
+                        path.append(AppRoute.emailpref)
+                           }
                         
                         // Travel Activity Section..
                         sectionHeader("TRAVEL ACTIVITY")
@@ -42,20 +68,27 @@ struct SettingsView: View {
                         // Payment Info Section..
                         sectionHeader("SUPPORT")
                         sectionRow(icon: "bubble.left.and.bubble.right", title: "FAQ")
+                            .onTapGesture {
+                        path.append(AppRoute.faq)
+                           }
+                        
                         sectionRow(icon: "tray.full.fill", title: "Most recent questions")
                         
+                        //Policy
+                        sectionHeader("Privacy Policy")
+                        sectionRow(icon: "hand.raised", title: "Privacy Policy")
+                            .onTapGesture {
+                        path.append(AppRoute.privacypolicy)
+                           }
                     }
                     Spacer()
                 }
                 .background(Color(.systemGroupedBackground))
             
-            .navigationBarItems(trailing: HStack {
-                Image(systemName: "message")
-                Image(systemName: "bell")
-            })
-            .navigationTitle("")
-            .navigationBarHidden(true)
-        }
+           
+           // .navigationTitle("")
+            .navigationBarBackButtonHidden(true)
+        
     }
     
    
@@ -89,6 +122,7 @@ struct SettingsView: View {
         .padding()
         .background(Color.white)
         .cornerRadius(15)
+        .shadow(color: Color.black.opacity(0.05), radius: 3, x: 0, y: 2)
         .padding(.horizontal)
         .padding(.vertical, 2)
     }

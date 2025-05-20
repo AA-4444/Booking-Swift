@@ -75,7 +75,18 @@ struct Estate_SwiftApp: App {
                                 ContentView(user: $user,path: $path)
                         case .settings:
                                 SettingsView(path: $path)
-                       
+                        case .devicepref:
+                                DevicePreferenceView(path: $path)
+                        case .emailpref:
+                                EmailPreferenceView(path: $path)
+                        case .travelpref:
+                                TravelPreferenceView(path: $path)
+                        case .privacypolicy:
+                                PrivacyPolicyView(path: $path)
+                        case .faq:
+                                FAQ(path: $path)
+                                
+                                
                         }
                     }
             }

@@ -17,4 +17,9 @@ enum AppRoute: Hashable {
     case cards
     case main
     case settings
+    case devicepref
+    case emailpref
+    case travelpref
+    case privacypolicy
+    case faq
 }
